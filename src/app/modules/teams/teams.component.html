@@ -1,0 +1,10 @@
+<div [hidden]="selectedTeam.id!==0">
+    <mat-tab-group (selectedTabChange)="tabChanged($event)">
+    <mat-tab *ngFor="let option of poolsList" label="{{option.name}}" >
+        <mat-list role="list"  *ngFor="let teams of teamsList">
+            <mat-list-item role="listitem" (click)="getTeamDetails(teams)">{{teams.name}}</mat-list-item>
+        </mat-list>
+    </mat-tab>
+</mat-tab-group>
+</div>
+<team-detail [hidden]="selectedTeam.id===0" [selectedTeam]="selectedTeam"></team-detail>

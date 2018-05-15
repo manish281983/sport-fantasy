@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+    background: $background-color;
+    position: relative;
+}
+
+body,html {
+    overflow: hidden;
+}
+
+:focus {
+    outline: none;
+}
+
+section.app-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    float: left;
+    margin-left: 0;
+    overflow-y: hidden;
+    padding-bottom: 0;
+    z-index: 1;
+}
+
+.content-container{
+    width: 100%;
+    padding-bottom: 100px;
+    max-height: calc(100% - #{$header-height});
+    overflow-y: scroll;
+}
+
+/* Testing this */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}

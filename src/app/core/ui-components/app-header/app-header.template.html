@@ -1,0 +1,49 @@
+<header class="core-header">
+    <section class="header-info row">
+        <div class="header-left-section text--center hide-ipad-up col-xs-12">
+            <a class="back-btn pull-left" (click)="goBack()" *ngIf="isBackVisible()">
+                <i class="mdi mdi-chevron-left"></i>
+            </a>
+            <div class="header-title-box">
+                <h2 class="header-title" [class.adjust-margin]="isBackVisible()">{{pageTitle}}</h2>
+            </div>
+        </div>
+        <div class="header-left-section hide-mobile">
+            <div class="ge-icon">
+                <i></i>
+            </div>
+            <h2 class="header-title">Power Growth Engine</h2>
+        </div>
+        <div class="header-middle-section header-nav-bar hide-mobile">
+            <a class="nav-item" [class.active]="isCurrentState('Schedule')" (click)="gotToPage('schedule')">
+                <span class="nav-title">Schedule</span>
+            </a>
+
+            <a class="nav-item" [class.active]="isCurrentState('Teams')" (click)="gotToPage('teams')">
+                <span class="nav-title">Teams</span>
+            </a>
+
+            <a class="nav-item" [class.active]="isCurrentState('Results')">
+                <span class="nav-title">Results</span>
+            </a>
+            <a class="nav-item" [class.active]="isCurrentState('Stats')">
+                <span class="nav-title">Stats</span>
+            </a>
+                <a class="nav-item" [class.active]="isCurrentState('Activate')">
+                    <span class="nav-title">Leaderboard</span>
+                </a>
+            <a class="nav-item" [class.active]="isCurrentState('Activate')">
+                <span class="nav-title">My Brackets</span>
+            </a>
+        </div>
+        <div class="header-right-section hide-mobile">
+            <div class="bell-icon">
+                <i class="mdi mdi-bell-outline"></i>
+
+                <div class="notificaton-count">4</div>
+            </div>
+            <div class="user-profile-box">
+            </div>
+        </div>
+    </section>
+</header>
