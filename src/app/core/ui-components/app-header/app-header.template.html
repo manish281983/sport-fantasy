@@ -22,8 +22,11 @@
             <a class="nav-item" [class.active]="isCurrentState('Teams')" (click)="gotToPage('teams')">
                 <span class="nav-title">Teams</span>
             </a>
+            <a class="nav-item" [class.active]="isCurrentState('Grounds')" (click)="gotToPage('venues')">
+                <span class="nav-title">Grounds</span>
+            </a>
 
-            <a class="nav-item" [class.active]="isCurrentState('Results')">
+            <a class="nav-item" [class.active]="isCurrentState('Results')"  (click)="gotToPage('result')">
                 <span class="nav-title">Results</span>
             </a>
             <a class="nav-item" [class.active]="isCurrentState('Stats')">
@@ -32,7 +35,7 @@
                 <a class="nav-item" [class.active]="isCurrentState('Activate')">
                     <span class="nav-title">Leaderboard</span>
                 </a>
-            <a class="nav-item" [class.active]="isCurrentState('Activate')">
+            <a class="nav-item"  [class.active]="isCurrentState('Brackets')" (click)="gotToPage('brackets')">
                 <span class="nav-title">My Brackets</span>
             </a>
         </div>

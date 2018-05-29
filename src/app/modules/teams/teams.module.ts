@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TeamsComponent } from './teams.component';
 import {TeamsRoutingModule} from './teams-routing.module';
 import {MatTabsModule, MatListModule} from '@angular/material';
-import {TeamDetailComponent} from './components/team-detail/team-detail.component';
-
 
 @NgModule({
   imports: [
@@ -15,8 +13,7 @@ import {TeamDetailComponent} from './components/team-detail/team-detail.componen
 
   ],
   declarations: [
-    TeamsComponent,
-    TeamDetailComponent
+    TeamsComponent
   ]
 })
 export class TeamsModule {

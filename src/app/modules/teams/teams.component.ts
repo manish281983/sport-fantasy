@@ -12,17 +12,12 @@ import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 export class TeamsComponent implements OnInit {
     poolsList= [];
     teamsList= [];
-    selectedTeam= {
-        id: 0
-    };
 
   constructor(private apiSrvc: APISrvc, private router: Router, private activatedRoute: ActivatedRoute) {
    }
 
   ngOnInit() {
         this.getPoolInfo();
-
-
   }
 tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
     this.teamsList=this.poolsList[tabChangeEvent.index].teamlist;
@@ -40,8 +35,6 @@ tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
   }
 
   getTeamDetails(team){
-    this.selectedTeam= team;
-    this.router.navigate(['details/'+team.name], {relativeTo: this.activatedRoute});
-
+    this.router.navigate(['/team-info/'+team.id], {relativeTo: this.activatedRoute});
   }
 }

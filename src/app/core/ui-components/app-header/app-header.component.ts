@@ -39,8 +39,8 @@ export class AppHeaderComponent implements OnInit {
     }
 
     gotToPage(page){
-          this.router.navigate([page], {relativeTo: this.activatedRoute});
 
+          this.router.navigate([page], {relativeTo: this.activatedRoute});
     }
 
     goBack() {

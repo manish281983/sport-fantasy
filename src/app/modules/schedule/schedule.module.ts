@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScheduleComponent } from './schedule.component';
 import {ScheduleRoutingModule} from './schedule-routing.module';
-import {TournamentBracket} from './components/tournament-bracket/tournament-bracket.component';
 
 
 @NgModule({
@@ -12,11 +11,9 @@ import {TournamentBracket} from './components/tournament-bracket/tournament-brac
 
   ],
   exports: [
-       TournamentBracket
     ],
   declarations: [
-    ScheduleComponent,
-    TournamentBracket
+    ScheduleComponent
   ]
 })
 export class ScheduleModule {

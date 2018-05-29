@@ -5,10 +5,15 @@ import {ScheduleComponent} from './schedule.component';
 
 export const scheduleRoutes: Routes = [
     {
-            path: 'schedule',
-            component: ScheduleComponent,
-            data: {title: 'Schedule'}
-        }
+        path: 'schedule',
+        component: ScheduleComponent,
+        data: {title: 'Schedule'}
+    },
+    {
+        path: 'result',
+        component: ScheduleComponent,
+        data: {title: 'Result'}
+    }
 ];
 
 @NgModule({

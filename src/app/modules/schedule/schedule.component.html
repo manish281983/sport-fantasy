@@ -1,4 +1,10 @@
-<p>
-  <tournament-bracket></tournament-bracket>
-
-</p>
+<div>
+    <ul>
+        <li  *ngFor="let schedule of matchSchedule" [hidden]="hideMatch(schedule)">
+            {{schedule.date}} {{schedule.time}}<br/> {{schedule.team1.name}} Vs {{schedule.team2.name}}<br/>
+            - {{schedule.venue.ground}}, {{schedule.venue.city}}
+            <p [hidden]="!schedule.result">{{schedule.result}}
+            </p>
+        </li>
+    </ul>
+</div>

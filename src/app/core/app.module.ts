@@ -14,7 +14,10 @@ import {ResolutionSrvc} from './services/resolution.service';
 import {StorageSrvc} from './services/storage.service';
 import {DashboardModule} from '../modules/dashboard/dashboard.module';
 import {TeamsModule} from '../modules/teams/teams.module';
+import {VenuesModule} from '../modules/venues/venues.module';
+import {BracketsModule} from '../modules/brackets/brackets.module';
 import {ScheduleModule} from '../modules/schedule/schedule.module';
+import {TeamInfoModule} from '../modules/team-info/team-info.module';
 
 @NgModule({
     imports: [
@@ -27,7 +30,10 @@ import {ScheduleModule} from '../modules/schedule/schedule.module';
         UIComponentModule,
         DashboardModule,
         TeamsModule,
-        ScheduleModule
+        TeamInfoModule,
+        ScheduleModule,
+        VenuesModule,
+        BracketsModule
 
     ],
     declarations: [
