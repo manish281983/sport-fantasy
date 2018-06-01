@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background: $background-color;
+    background: $background-color !important;
     position: relative;
 }
 
@@ -37,4 +37,14 @@ section.app-container {
 ::-webkit-scrollbar {
     width: 0;
     background: transparent;
+}
+
+
+.floatLeft{
+    float: left;
+}
+
+.clear{
+    clear: both;
+    height: 0;
 }

@@ -24,9 +24,9 @@
             font-weight: normal;
         }
 
-        .ge-icon {
+        .icon {
             i {
-                content: url('~/../assets/images/pge-logo.png');
+                content: url('~/../assets/images/logo.png');
                 height: 40px;
             }
         }
@@ -103,7 +103,7 @@
             cursor: pointer;
             position: relative;
             display: flex;
-            color: $ziggurat;
+            color: $white;
             width: $nav-item-width;
 
             &:after {
@@ -114,7 +114,7 @@
                 display: inline-block;
                 width: calc(#{$header-height} - 3px);
                 height: calc(#{$header-height} - 3px);
-                border-right: 2px solid $limed-spruce;
+                border-right: 1px solid $white;
                 z-index: 1;
             }
 

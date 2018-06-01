@@ -1,0 +1,62 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
+.match-schedule{
+    .match-schedule-container{
+        border-top: 1px solid $firefly !important;
+        border: 1px solid $catskill-white;
+        box-shadow: 1px 1px 2px 1px rgba(133,133,133,0.50);
+        margin: 10px 10px 20px 10px;
+        background: $white;
+        .match-schedule-date{
+            padding: 10px;
+            border-bottom: 1px solid $catskill-white;
+            font-size: 20px;
+            color: #34A6E4;
+            letter-spacing: 0;
+            line-height: 30px;
+            span{
+                color: $black;
+                padding-left: 10px;
+                font-size: 14px;
+            }
+        }
+        .match-schedule-info{
+            padding: 0 10px 10px;
+            color: #121F26;
+            letter-spacing: 0;
+            line-height: 40px;
+
+            .match-schedule-team{
+                position: relative;
+
+                .team-icon{
+                    position: absolute;
+                    width: 35px;
+                    top: 2px;
+                }
+
+                .match-schedule-versus{
+                    padding: 0 10px;
+                    font-size: 16px;
+                }
+                span{
+                    padding-left: 45px;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+            }
+            .match-schedule-sub-healdine {
+                font-size: 12px;
+
+                span{
+                    font-weight: bold;
+                    font-size: 14px;
+
+                }
+            }
+        }
+
+    }
+
+}
