@@ -1,5 +1,7 @@
+<app-sub-header [title]="'SCHEDULE'"></app-sub-header>
+
 <div class="match-schedule">
-    <div class="match-schedule-container" *ngFor="let schedule of matchSchedule" [hidden]="hideMatch(schedule)">
+    <div class="match-schedule-container" *ngFor="let schedule of matchSchedule" [hidden]="schedule.result.description">
         <div class="match-schedule-date">
             {{schedule.date | date:'EEEE, dd MMM yyyy'}}<span>{{schedule.time}}</span>
         </div>
@@ -7,31 +9,16 @@
             <div class="match-schedule-sub-healdine">
                 <span>Match {{schedule.id}}, </span>{{schedule.venue.ground}}, {{schedule.venue.city}}
             </div>
-            <div [hidden]="!schedule.result">{{schedule.result}}
-            </div>
-
             <div class="match-schedule-team">
                 <div class="floatLeft">
-                    <img src="../../../assets/images/india-logo.png" class="team-icon"/> <span>{{schedule.team1.name}}</span>
+                    <img src="../../../assets/images/{{schedule.team1.name | lowercase}}-logo.png" class="team-icon"/> <span>{{schedule.team1.name}}</span>
                 </div>
                 <div class="floatLeft match-schedule-versus">Vs</div>
-                <div class="floatLeft">
-                    <img src="../../../assets/images/pakistan-logo.png" class="team-icon"/>  <span>{{schedule.team2.name}}</span>
+                <div class="floatLeft"  [class.active]="matchResult(schedule.result.description, schedule.team2.name, schedule.result.loose)">
+                    <img src="../../../assets/images/{{schedule.team2.name | lowercase}}-logo.png" class="team-icon"/>  <span>{{schedule.team2.name}}</span>
                 </div>
                 <div class="clear">&nbsp;</div>
-
             </div>
         </div>
     </div>
-
-    <ul>
-        <li  *ngFor="let schedule of matchSchedule" [hidden]="hideMatch(schedule)">
-            {{schedule.date}} {{schedule.time}}<br/> {{schedule.team1.name}} Vs {{schedule.team2.name}}<br/>
-            - {{schedule.venue.ground}}, {{schedule.venue.city}}
-            <p [hidden]="!schedule.result">{{schedule.result}}
-            </p>
-        </li>
-    </ul>
-
-
 </div>

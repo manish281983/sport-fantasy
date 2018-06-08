@@ -1,10 +1,14 @@
 @import "~assets/sass/variables";
 @import '~assets/sass/base/tools.responsive';
 
+.headerActive {
+        background: $header-background !important;
+    }
 .core-header {
     .header-info {
         margin: 0;
     }
+
 
     .header-left-section {
         * {
@@ -91,7 +95,7 @@
         width: calc(100% - #{$left-section-width} - 110px);
     }
 
-    $nav-item-width: 100px;
+    $nav-item-width: 120px;
     .header-nav-bar {
         display: flex;
         height: $header-height;
@@ -100,28 +104,13 @@
         padding: 0;
 
         .nav-item {
+            font-weight: bold;
+            font-size: $font-size-large;
             cursor: pointer;
             position: relative;
             display: flex;
             color: $white;
             width: $nav-item-width;
-
-            &:after {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                display: inline-block;
-                width: calc(#{$header-height} - 3px);
-                height: calc(#{$header-height} - 3px);
-                border-right: 1px solid $white;
-                z-index: 1;
-            }
-
-            &:last-child:after {
-                content: none;
-            }
-
             .nav-title {
                 display: flex;
                 flex-direction: column;
@@ -129,9 +118,9 @@
                 z-index: 2;
             }
 
-            &.active {
-                color: $tan-hide;
-            }
+        }
+        .nav-item:hover{
+            text-decoration: none;
         }
     }
 }

@@ -4,10 +4,10 @@ import {environment} from 'app/environment';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss']
+  templateUrl: './result.component.html',
+  styleUrls: ['./result.component.scss']
 })
-export class ScheduleComponent implements OnInit {
+export class ResultComponent implements OnInit {
 matchSchedule=[];
 currentPage: string;
   constructor(private apiSrvc: APISrvc, private activatedRoute: ActivatedRoute) {
@@ -39,9 +39,4 @@ getMatchSchedule(){
     }
     return false;
   }
-
-
-    hideMatch(schedule){
-        return (this.currentPage==='schedule')? schedule.result.description: !schedule.result.description;
-    }
 }

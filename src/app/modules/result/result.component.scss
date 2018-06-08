@@ -1,0 +1,74 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
+.match-result{
+    .match-result-container{
+        border-top: 1px solid $firefly !important;
+        border: 1px solid $catskill-white;
+        box-shadow: 1px 1px 2px 1px rgba(133,133,133,0.50);
+        margin: 10px 10px 20px 10px;
+        background: $white;
+        .match-result-info{
+            padding: 10px;
+            color: #121F26;
+            letter-spacing: 0;
+
+            .row{
+
+                .match-result-box {
+                    border-left: solid 1px #bbbcba;
+                }
+                .match-result-team{
+                    position: relative;
+                    line-height:40px;
+                    .team-icon{
+                        height: 35px;
+                    }
+
+                    .match-result-versus{
+                        padding: 0 10px;
+                        font-size: 16px;
+                    }
+                    span{
+                        padding-left: 45px;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                    .active{
+                       opacity: .5;
+                    }
+                    .score {
+                        font-size: 18px;
+                        padding-left: 0;
+                        float: right;
+                    }
+
+                }
+                .match-result-sub-healdine {
+                    font-size: 12px;
+                    line-height: 25px;
+                    span{
+                        font-weight: bold;
+                        font-size: 14px;
+
+                    }
+                }
+                .match-result-date{
+                    border-bottom: 1px solid $catskill-white;
+                    font-size: 20px;
+                    color: #000;
+                    font-weight: bold;
+                    letter-spacing: 0;
+                    line-height: 30px;
+                    span{
+                        color: $black;
+                        padding-left: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,9 +1,25 @@
-<div>
-    <mat-tab-group (selectedTabChange)="tabChanged($event)">
+<app-sub-header [title]="'TEAMS'"></app-sub-header>
+<div class="teams">
+    <div class="row" >
+        <div class="col-sm-4 team-box"  *ngFor="let team of teamsList" (click)="getTeamDetails(team)">
+            <div class="team" [style.backgroundColor]="'#'+team.color">
+                <div class="team-icon">
+                    <img src="../../../assets/images/{{team.name | lowercase}}-logo.png">
+                </div>
+                <div class="team-name">{{team.name}}</div>
+                <div class="team-profile">
+                     INFO
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- <mat-tab-group (selectedTabChange)="tabChanged($event)">
     <mat-tab *ngFor="let option of poolsList" label="{{option.name}}" >
         <mat-list role="list"  *ngFor="let teams of teamsList">
             <mat-list-item role="listitem" (click)="getTeamDetails(teams)">{{teams.name}}</mat-list-item>
         </mat-list>
     </mat-tab>
-</mat-tab-group>
+</mat-tab-group>-->
+
+
 </div>

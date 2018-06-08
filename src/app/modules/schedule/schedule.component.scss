@@ -32,7 +32,7 @@
 
                 .team-icon{
                     position: absolute;
-                    width: 35px;
+                    height: 35px;
                     top: 2px;
                 }
 
@@ -45,6 +45,11 @@
                     font-size: 24px;
                     font-weight: bold;
                 }
+                .active{
+                   opacity: .5;
+                }
+
+
             }
             .match-schedule-sub-healdine {
                 font-size: 12px;
@@ -54,6 +59,12 @@
                     font-size: 14px;
 
                 }
+            }
+
+            .match-result {
+                padding: 0 10px;
+                background: #5AB96C;
+                color: #fff;
             }
         }
 

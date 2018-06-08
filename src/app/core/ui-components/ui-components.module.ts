@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipeModule } from  '../pipe/pipe.module';
 
 import {AppHeaderComponent}  from './app-header/app-header.component';
+import {AppSubHeaderComponent}  from './app-sub-header/app-sub-header.component';
 import {AppFooterComponent}  from './app-footer/app-footer.component';
 import {AppModalComponent}  from './app-modal/app-modal.component';
 import {ScreenLoaderComponent}  from './sw-screen-loader/sw-screen-loader.component';
@@ -37,6 +38,7 @@ import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.ser
     ],
     exports: [
         AppHeaderComponent,
+        AppSubHeaderComponent,
         AppFooterComponent,
         AppModalComponent,
         ScreenLoaderComponent,
@@ -47,6 +49,7 @@ import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.ser
     ],
     declarations: [
         AppHeaderComponent,
+        AppSubHeaderComponent,
         AppFooterComponent,
         AppModalComponent,
         ScreenLoaderComponent,

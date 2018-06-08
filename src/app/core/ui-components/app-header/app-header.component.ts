@@ -5,7 +5,7 @@ import 'rxjs/add/operator/mergeMap';
 
 import {StorageSrvc} from 'app/core/services/storage.service';
 
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 @Component({
     selector: 'app-header',
@@ -14,6 +14,7 @@ import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 })
 export class AppHeaderComponent implements OnInit {
     pageTitle: string;
+    @Input() topPosition: boolean;
     constructor(private router: Router,
                 private activatedRoute: ActivatedRoute, private storageSrvc: StorageSrvc) {
     }

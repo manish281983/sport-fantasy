@@ -1,5 +1,25 @@
-<ul>
-    <li  *ngFor="let venue of venues">
-        {{venue.city}}- {{venue.ground}}
-    </li>
-</ul>
+<app-sub-header [title]="'VENUES'"></app-sub-header>
+<div class="venues">
+    <div class="row" >
+        <div class="col-sm-4 venue-box"   *ngFor="let venue of venues">
+            <div class="venue">
+                    <img src="../../../assets/images/lord's.jpg"><br/>
+                <div class="venue__inner">
+                    <div class="card__info">
+                        <div class="card__details">
+                            <h3 class="card__title">{{venue.ground}}</h3>
+                            <p class="card__subtitle venue-card__subtitle">
+                                    <span class="venue-card__bullet">•</span>
+                                {{venue.city}}
+                            </p>
+                        </div>
+                    </div>
+                    <button class="card__link btn">View Stadium Details</button>
+                    <button class="card__link btn">Matches</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

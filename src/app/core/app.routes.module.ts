@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes, Router} from '@angular/router';
 import {ResolutionSrvc} from './services/resolution.service';
 import {DashboardComponent} from '../modules/dashboard/dashboard.component';
-import {ScheduleComponent} from '../modules/schedule/schedule.component';
 
 const appRoutes: Routes = [
     {

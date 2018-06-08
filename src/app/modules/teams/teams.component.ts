@@ -28,6 +28,7 @@ tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
     .subscribe(
       data => {
         this.poolsList= data;
+         this.teamsList=this.poolsList[0].teamlist;
       },
       err => {
           console.log(err);
@@ -36,5 +37,9 @@ tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
 
   getTeamDetails(team){
     this.router.navigate(['/team-info/'+team.id], {relativeTo: this.activatedRoute});
+  }
+
+  getBgColor (team){
+    return '#'+team.color;
   }
 }

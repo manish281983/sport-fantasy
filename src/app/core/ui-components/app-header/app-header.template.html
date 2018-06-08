@@ -1,4 +1,4 @@
-<header class="core-header">
+<header class="core-header"  [class.headerActive]="!topPosition">
     <section class="header-info row">
         <div class="header-left-section text--center hide-ipad-up col-xs-12">
             <a class="back-btn pull-left" (click)="goBack()" *ngIf="isBackVisible()">
@@ -29,12 +29,9 @@
             <a class="nav-item" [class.active]="isCurrentState('Results')"  (click)="gotToPage('result')">
                 <span class="nav-title">Results</span>
             </a>
-            <a class="nav-item" [class.active]="isCurrentState('Stats')">
-                <span class="nav-title">Stats</span>
+            <a class="nav-item" [class.active]="isCurrentState('Activate')">
+                <span class="nav-title">Leaderboard</span>
             </a>
-                <a class="nav-item" [class.active]="isCurrentState('Activate')">
-                    <span class="nav-title">Leaderboard</span>
-                </a>
             <a class="nav-item"  [class.active]="isCurrentState('Brackets')" (click)="gotToPage('brackets')">
                 <span class="nav-title">My Brackets</span>
             </a>

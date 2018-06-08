@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ScheduleComponent } from './schedule.component';
-import {ScheduleRoutingModule} from './schedule-routing.module';
+import { ResultComponent } from './result.component';
+import {ResultRoutingModule} from './result-routing.module';
 import {UIComponentModule} from '../../core/ui-components/ui-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ScheduleRoutingModule,
+    ResultRoutingModule,
     UIComponentModule
   ],
   exports: [
     ],
   declarations: [
-    ScheduleComponent
+    ResultComponent
   ]
 })
-export class ScheduleModule {
+export class ResultModule {
 }
