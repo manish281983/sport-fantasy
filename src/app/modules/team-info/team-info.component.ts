@@ -13,24 +13,28 @@ export class TeamInfoComponent implements OnInit {
         captain: '',
         viceCaptain: ''
     };
-  constructor(private apiSrvc: APISrvc, route: ActivatedRoute) {
-        this.getTeamDetail(route.snapshot.params['id']);
-  }
 
+   selectedOption='Squads';
+  constructor(private apiSrvc: APISrvc,private route: ActivatedRoute) {
+
+  }
+    ngOnInit() {
+         this.getTeamDetail(this.route.snapshot.params['id']);
+  }
 
   getTeamDetail(teamId){
       this.apiSrvc.getData(environment.baseURL + '/team-info/'+ teamId, {})
       .subscribe(
         data => {
           this.teamInfo= data;
+          console.log(this.teamInfo);
         },
         err => {
             console.log(err);
         });
     }
-
-  ngOnInit() {
-
-  }
+    selectInfoOption(option){
+        this.selectedOption= option;
+    }
 
 }

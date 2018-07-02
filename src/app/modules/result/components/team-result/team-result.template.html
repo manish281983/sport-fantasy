@@ -1,0 +1,31 @@
+
+<div class="match-result">
+    <div class="match-result-container" *ngFor="let schedule of matchSchedule">
+        <!-- -->
+        <div class="match-result-info">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="match-result-team">
+                        <div  [class.active]="matchResult(schedule.result.description, schedule.team1.name, schedule.result.loose)" >
+                            <img src="../../../assets/images/{{schedule.team1.name | lowercase}}-logo.png" class="team-icon"/> <span>{{schedule.team1.name}}</span> <span class="score">{{schedule.result.team1}}</span>
+                        </div>
+                        <div  [class.active]="matchResult(schedule.result.description, schedule.team2.name, schedule.result.loose)">
+                            <img src="../../../assets/images/{{schedule.team2.name | lowercase}}-logo.png" class="team-icon"/>  <span>{{schedule.team2.name}}</span> <span class="score">{{schedule.result.team2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 match-result-box">
+                    <div class="match-result-date" [style.color]="'#'+schedule.result.color">
+                        {{schedule.result.description}}
+                    </div>
+                    <div class="match-result-sub-healdine">
+                        <span>Match {{schedule.match}}, </span>{{schedule.venue.ground}}, {{schedule.venue.city}}
+                    </div>
+                    <div class="match-result-sub-healdine">
+                        <span> {{schedule.date | date:'EEEE, dd MMM yyyy'}}, </span>{{schedule.time}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

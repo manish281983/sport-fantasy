@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ScheduleComponent } from './schedule.component';
 import {ScheduleRoutingModule} from './schedule-routing.module';
 import {UIComponentModule} from '../../core/ui-components/ui-components.module';
+import {TeamSchedule} from './components/team-schedule/team-schedule.component';
 
 @NgModule({
   imports: [
@@ -11,9 +12,11 @@ import {UIComponentModule} from '../../core/ui-components/ui-components.module';
     UIComponentModule
   ],
   exports: [
+    TeamSchedule
     ],
   declarations: [
-    ScheduleComponent
+    ScheduleComponent,
+    TeamSchedule
   ]
 })
 export class ScheduleModule {

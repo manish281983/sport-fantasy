@@ -1,28 +1,55 @@
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                {{teamInfo.name}}
-            </div>
+<app-sub-header [title]="'TEAM INFO'"></app-sub-header>
+<div class="team-info">
+    <div class="team-header" [style.backgroundColor]="'#'+teamInfo.color">
+        <div class="row team-detail">
+            <div class="col-sm-6">
+                <div class="team-icon">
+                    <img class="team-logo" src="../../../assets/images/{{teamInfo.name | lowercase}}-logo.png" >
+                </div>
 
+                <div class="team-name">{{teamInfo.name}}</div>
+                <div class="team-info-option">
+                    <div class="options" (click)="selectInfoOption('Squads')">
+                        <span [class.selected]="selectedOption==='Squads'">Squads</span>
+                    </div>
+                    <div class="options" (click)="selectInfoOption('Schedule')">
+                        <span [class.selected]="selectedOption==='Schedule'">Schedule</span>
+                    </div>
+                    <div class="options" (click)="selectInfoOption('Results')">
+                        <span [class.selected]="selectedOption==='Results'">Results</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6 team-head">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Captain:
+                        </div>
+                        <div class="col-sm-6">
+                            <strong>{{teamInfo.captain}}</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Vice Captain:
+                        </div>
+                        <div class="col-sm-6">
+                            <strong>{{teamInfo.viceCaptain}}</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Coach:
+                        </div>
+                        <div class="col-sm-6">
+                            <strong>{{teamInfo.coach}}</strong>
+                        </div>
+                    </div>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-sm">
-                Captain: {{teamInfo.captain}}
-            </div>
-            <div class="col-sm">
-                Vice Captain: {{teamInfo.viceCaptain}}
-            </div>
-            <div class="col-sm">
-                Coach:{{teamInfo.coach}}
-            </div>
-
-        </div>
-
-        <ul>
-            <li  *ngFor="let player of teamInfo.players">
-               {{player.name}}
-            </li>
-        </ul>
     </div>
+        <team-squad [players]="teamInfo.players" [hidden]="selectedOption!=='Squads'"></team-squad>
+        <team-schedule [teamName]="teamInfo.name" [hidden]="selectedOption!=='Schedule'"></team-schedule>
+        <team-result [teamName]="teamInfo.name" [hidden]="selectedOption!=='Results'"></team-result>
 </div>
