@@ -7,7 +7,7 @@ import {DashboardComponent} from '../modules/dashboard/dashboard.component';
 const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'schedule',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
     },
 

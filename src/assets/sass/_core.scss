@@ -50,3 +50,24 @@ section.app-container {
 }
 
 
+.main-headline-component{
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 5px;
+    .main-headline-component-title{
+        text-transform: uppercase;
+        font-size: $font-size-base;
+        font-weight: bold;
+    }
+
+     .main-headline-component-title:before {
+        content: '';
+        border-left: 4px solid #3f90dc;
+        padding-right:10px;
+    }
+}
+
+.box-container{
+    border: 1px solid #e1e1e1;
+    background: #fff;
+    padding: 10px;
+}

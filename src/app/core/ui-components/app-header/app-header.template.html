@@ -29,7 +29,7 @@
             <a class="nav-item" [class.active]="isCurrentState('Results')"  (click)="gotToPage('result')">
                 <span class="nav-title">Results</span>
             </a>
-            <a class="nav-item" [class.active]="isCurrentState('Activate')">
+            <a class="nav-item" [class.active]="isCurrentState('Activate')"  (click)="gotToPage('dashboard')">
                 <span class="nav-title">Leaderboard</span>
             </a>
             <a class="nav-item"  [class.active]="isCurrentState('Brackets')" (click)="gotToPage('brackets')">
