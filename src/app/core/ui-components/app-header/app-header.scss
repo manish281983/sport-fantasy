@@ -6,173 +6,39 @@
     }
 .core-header {
     .header-info {
-        margin: 0;
+    max-width: 1200px;
+    min-width: auto;
+    margin: 0 auto;
+    position: relative;
+
+    .header-logo{
+        float: left;
     }
 
 
-    .header-left-section {
-        * {
-            display: inline-block;
-            vertical-align: middle;
-        }
-    }
 
-    .header-left-section {
+    .header-top-section {
         padding-top: 2px;
-        width: $left-section-width;
-
+        margin: 15px 0 0 10px;
+        color: #fff;
+        text-transform: uppercase;
         .header-title {
             color: $athens-gray;
-            font-size: $font-size-base+2;
-            padding-left: 5px;
+            line-height: .8;
+                font-size: 32px;
+        }
+        .header-sub-title {
+            color: $athens-gray;
+            font-size: 14px;
             font-weight: normal;
         }
 
-        .icon {
-            i {
-                content: url('~/../assets/images/logo.png');
-                height: 40px;
-            }
-        }
     }
 
-    .header-right-section {
-        padding: 0;
+    .header-bottom-section{
 
-        .user-profile-box, .bell-icon {
-            display: inline-block;
-            height: $header-height;
-            width: 60px;
-        }
-
-        .bell-icon {
-            padding: 4px 0;
-            text-align: center;
-            margin-top: 8px;
-            vertical-align: top;
-
-            i {
-
-                color: $ziggurat;
-                font-size: $font-size-large+2;
-            }
-
-            .notificaton-count {
-                display: inline-block;
-                border-radius: 10px;
-                height: 20px;
-                width: 20px;
-                background-color: $picton-blue;
-                text-align: center;
-                margin-left: -8px;
-                color: $white;
-            }
-
-        }
-
-        .user-info {
-            font-size: $font-size-base+2;
-            label {
-                color: $off-white;
-            }
-
-            .user-role {
-                color: $gray-dark;
-            }
-        }
-
-        .settings-icon {
-            margin: 0 20px 0 5px;
-            padding-bottom: 5px;
-            i {
-                color: $off-white;
-                font-size: $font-size-large+2;
-            }
-        }
-    }
-
-    .header-middle-section {
-        width: calc(100% - #{$left-section-width} - 110px);
-    }
-
-    $nav-item-width: 120px;
-    .header-nav-bar {
-        display: flex;
-        height: $header-height;
-        font-size: $font-size-base+1;
-        margin-left: -20px;
-        padding: 0;
-
-        .nav-item {
-            font-weight: bold;
-            font-size: $font-size-large;
-            cursor: pointer;
-            position: relative;
-            display: flex;
-            color: $white;
-            width: $nav-item-width;
-            .nav-title {
-                display: flex;
-                flex-direction: column;
-                margin: auto;
-                z-index: 2;
-            }
-
-        }
-        .nav-item:hover{
-            text-decoration: none;
-        }
     }
 }
 
-@include media-query(lap) {
-    .core-header {
-        .header-info {
-            .header-left-section {
-                width: $ipad-left-section-width;
-            }
-
-            .header-middle-section {
-                width: calc(100% - #{$ipad-left-section-width} - 110px);
-
-            }
-        }
-    }
 }
 
-@include media-query(palm) {
-    $back-button-font: 32px;
-    .core-header {
-        height: calc(#{$header-height} - 10px);;
-        .header-info {
-            .header-left-section {
-                float: none;
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                .header-title-box {
-                    width: calc(100% - #{$back-button-font});
-                    text-align: center;
-                    .header-title {
-                        padding: 0;
-                        margin-top: 7px;
-                        font-size: $font-size-large+2;
-                        color: $pigeon-post;
-
-                        &.adjust-margin {
-                            margin-left: - ($back-button-font + 10px);
-                        }
-                    }
-                }
-
-                .back-btn {
-                    margin-top: -1px;
-                    i {
-                        color: $pigeon-post;
-                        font-size: $back-button-font;
-                    }
-                }
-            }
-        }
-    }
-}

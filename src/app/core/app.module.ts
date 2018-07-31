@@ -18,9 +18,7 @@ import {VenuesModule} from '../modules/venues/venues.module';
 import {BracketsModule} from '../modules/brackets/brackets.module';
 import {ScheduleModule} from '../modules/schedule/schedule.module';
 import {ResultModule} from '../modules/result/result.module';
-
-import {TeamInfoModule} from '../modules/team-info/team-info.module';
-
+import {TeamInfoModule} from '../modules/team-info/team-info.module'
 @NgModule({
     imports: [
         BrowserModule,
@@ -37,7 +35,6 @@ import {TeamInfoModule} from '../modules/team-info/team-info.module';
         ResultModule,
         VenuesModule,
         BracketsModule
-
     ],
     declarations: [
         AppComponent
