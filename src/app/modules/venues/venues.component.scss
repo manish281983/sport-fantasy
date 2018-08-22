@@ -1,0 +1,42 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
+.venues {
+    margin: 10px;
+    .venue-box{
+        min-width: 150px;
+        .venue{
+            background-size: cover;
+            border-radius: 0.6rem;
+            color: $white;
+            text-align: center;
+            padding: 10px;
+            margin: 15px 0;
+            img {
+                width: 100%;
+            }
+
+            .venue__inner {
+                margin: 25px;
+                 padding: 0 15px 18px;
+                 position: absolute;
+                 bottom: 0;
+                 left: 0;
+                 right: 0;
+                 background: linear-gradient(to top, #061D42 35%, transparent);
+             }
+             .venue-card__subtitle {
+                 height: auto;
+                 font-weight: 300;
+                 opacity: .8;
+                 margin-bottom: 0;
+             }
+
+             .card__link{
+                 background: linear-gradient(129.74deg, #9C7033 0%, #FFD063 58.25%, #B3803A 100%);
+                 color: #fff;
+             }
+        }
+    }
+
+}

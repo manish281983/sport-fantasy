@@ -1,0 +1,40 @@
+<header class="core-header">
+    <section class="header-info">
+        <div class="header-logo">
+        <img src="assets/images/logo.png"  width="130px">
+        </div>
+        <div class="floatLeft">
+            <div class="header-top-section">
+                    <div class="header-title">2019 ICC World Cup England™</div>
+                    <div class="header-sub-title">14 June - 15 July</div>
+            </div>
+
+            <div class="header-bottom-section">
+
+                 <div class="header-middle-section header-nav-bar hide-mobile">
+                    <a class="nav-item" [class.active]="isCurrentState('Schedule')" (click)="gotToPage('schedule')">
+                        <span class="nav-title">Schedule</span>
+                    </a>
+
+                    <a class="nav-item" [class.active]="isCurrentState('Teams')" (click)="gotToPage('teams')">
+                        <span class="nav-title">Teams</span>
+                    </a>
+                    <a class="nav-item" [class.active]="isCurrentState('Grounds')" (click)="gotToPage('venues')">
+                        <span class="nav-title">Grounds</span>
+                    </a>
+
+                    <a class="nav-item" [class.active]="isCurrentState('Results')"  (click)="gotToPage('result')">
+                        <span class="nav-title">Results</span>
+                    </a>
+                    <a class="nav-item" [class.active]="isCurrentState('Activate')"  (click)="gotToPage('dashboard')">
+                        <span class="nav-title">Leaderboard</span>
+                    </a>
+                    <a class="nav-item"  [class.active]="isCurrentState('Brackets')" (click)="gotToPage('brackets')">
+                        <span class="nav-title">My Brackets</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</header>
