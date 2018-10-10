@@ -3,30 +3,25 @@
         <div class="main-headline-component-title">Personal Stats</div>
     </div>
     <div class="box-container dashboard-container">
+        <div>Name: <strong>{{userDetails.name}}</strong></div>
+        <div>Team: <strong>{{userDetails.team.name}}</strong></div>
+        <div>Pool: <strong>{{userDetails.pool.name}}</strong></div>
+        <img src="../../../assets/images/{{userDetails.team.name | lowercase}}-logo.png" class="team-icon"/>
         <div class="row">
             <div class="col-sm-6">
-                Matches:  8
+                Matches:  {{userDetails.matches}}
             </div>
             <div class="col-sm-6">
-                Role: All rounder
+                Role: {{userDetails.role}}
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-                Runs : 150
+                Runs : {{userDetails.runs}}
             </div>
             <div class="col-sm-6">
-                Bat. Avg : 8
+                Wickets : {{userDetails.wickets}}
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6">
-                Wickets : 10
-            </div>
-            <div class="col-sm-6">
-                Bowl. Avg : 8
-            </div>
-        </div>
-
     </div>
 </div>

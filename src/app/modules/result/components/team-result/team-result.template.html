@@ -1,7 +1,6 @@
 
 <div class="match-result">
-    <div class="match-result-container" *ngFor="let schedule of matchSchedule">
-        <!-- -->
+    <div class="match-result-container" *ngFor="let schedule of matchSchedule"  (click)="gotToResult(schedule.id)">
         <div class="match-result-info">
             <div class="row">
                 <div class="col-sm-7">

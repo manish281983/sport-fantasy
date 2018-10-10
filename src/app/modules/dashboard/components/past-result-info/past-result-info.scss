@@ -1,2 +1,47 @@
 @import "~assets/sass/variables";
 @import '~assets/sass/base/tools.responsive';
+
+
+.result-info-table-container{
+    margin: 10px 0 20px;
+    .team-icon{
+        width: 25px;
+        height: 25px;
+        padding: 0;
+    }
+    .result-info-row{
+        border-bottom: solid 1px #e1e1e1;
+        padding: 10px 0;
+
+        .result-info-teams{
+            font-weight: bold;
+
+            .result-info-team1{
+                padding-bottom: 5px;
+            }
+        }
+        .result-info-versus{
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .result-info-other{
+            font-size: 11px;
+
+            .result-info-detail{
+                font-weight: bold;
+                font-size: 14px;
+            }
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+
+    }
+    .result-info-more {
+        text-align: right;
+        color: #3f90dc;
+        cursor: pointer;
+        font-size: 11px;
+    }
+}

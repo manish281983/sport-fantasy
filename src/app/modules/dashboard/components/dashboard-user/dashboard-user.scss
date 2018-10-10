@@ -3,7 +3,14 @@
 
 
 .dashboard-user{
-        .dashboard-container{
-            margin: 10px 0 20px ;
+    .dashboard-container{
+        position: relative;
+        margin: 10px 0 20px ;
+        img{
+            width:50px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
         }
+    }
 }

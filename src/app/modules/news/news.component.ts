@@ -4,21 +4,21 @@ import {environment} from 'app/environment';
 
 
 @Component({
-  templateUrl: './venues.component.html',
-  styleUrls: ['./venues.component.scss']
+  templateUrl: './news.component.html',
+  styleUrls: ['./news.component.scss']
 })
-export class VenuesComponent implements OnInit {
- venues= [];
+export class NewsComponent implements OnInit {
+ newsArr= [];
   constructor(private apiSrvc: APISrvc) {
-        this.getVenuesDetail();
+        this.getNewsDetail();
   }
 
 
-  getVenuesDetail(){
-      this.apiSrvc.getData(environment.serverURL + '/venue/all', {})
+  getNewsDetail(){
+      this.apiSrvc.getData(environment.baseURL + '/news', {})
       .subscribe(
         data => {
-          this.venues= data;
+          this.newsArr= data;
         },
         err => {
             console.log(err);

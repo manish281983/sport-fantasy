@@ -2,4 +2,31 @@
     <div class="main-headline-component">
         <div class="main-headline-component-title">Past Results</div>
     </div>
+    <div class="box-container result-info-table-container">
+        <div>
+            <div class="result-info-row" *ngFor="let result of matchResult" (click)="gotToResult(result.id)">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="result-info-teams">
+                             <div class="result-info-team1">
+                                <img src="../../../assets/images/{{result.team1.name | lowercase}}-logo.png" class="team-icon"/> <span>{{result.team1.name}}</span> {{result.result.team1}}
+                             </div>
+                            <img src="../../../assets/images/{{result.team2.name | lowercase}}-logo.png" class="team-icon"/>  <span>{{result.team2.name}}</span> {{result.result.team2}}
+
+
+                        </div>
+                    </div>
+                    <div class="col-sm-5" class="result-info-other">
+                        <div class="result-info-detail" [style.color]="'#'+result.result.color"> {{result.result.description}}</div>
+                        <div>{{result.time}}- {{result.date | date:'dd MMM, yyyy'}}</div>
+                        <div><i class="fa fa-map-marker" aria-hidden="true"></i> {{result.venue.ground}}, {{result.venue.city}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="result-info-more" (click)="gotToPage()">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i> View All
+        </div>
+    </div>
 </div>

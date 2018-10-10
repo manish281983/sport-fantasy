@@ -1,0 +1,14 @@
+<app-sub-header [title]="'NEWS'"></app-sub-header>
+<div class="box-container news-table">
+    <div class="news-container">
+        <div class="news-row" *ngFor="let news of newsArr">
+            <div class="row">
+                <div class="col-sm-12">
+                    {{news.description}} <span class="news-date">({{news.date}}, {{news.time}})</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

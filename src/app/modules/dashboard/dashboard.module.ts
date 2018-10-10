@@ -7,7 +7,7 @@ import {DashboardUser} from './components/dashboard-user/dashboard-user.componen
 import {DreamTeamInfo} from './components/dream-team-info/dream-team-info.component';
 import {UpcomingMatchInfo} from './components/upcoming-match-info/upcoming-match-info.component';
 import {FixturesInfo} from './components/fixtures-info/fixtures-info.component';
-import {RankingInfo} from './components/ranking-info/ranking-info.component';
+import {NewsInfo} from './components/news-info/news-info.component';
 import {PastResultInfo} from './components/past-result-info/past-result-info.component';
 import {ScheduleModule} from '../schedule/schedule.module';
 import {DashboardPointsTable} from './components/dashboard-points-table/dashboard-points-table.component';
@@ -29,7 +29,7 @@ import {CarouselModule} from "angular2-carousel";
       DreamTeamInfo,
       UpcomingMatchInfo,
       FixturesInfo,
-      RankingInfo,
+      NewsInfo,
       DashboardPointsTable,
       PastResultInfo
   ]

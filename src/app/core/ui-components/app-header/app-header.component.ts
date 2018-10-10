@@ -20,6 +20,26 @@ export class AppHeaderComponent implements OnInit {
     }
 
     ngOnInit() {
+
+            let obj= {
+                name: 'Manish Rawat',
+                pool: {
+                    id: 1,
+                    name: 'Div 1'
+                },
+                team: {
+                    id: 1,
+                    name: 'India'
+                },
+                matches: 11,
+                runs: 200,
+                wickets: 10,
+                role: 'All Rounder'
+
+            };
+            this.storageSrvc.setData('userDetails', JSON.stringify(obj));
+            this.storageSrvc.removeData('userDetails');
+
         if ((!this.storageSrvc.getData('sessionExpire')) || (this.storageSrvc.getData('sessionExpire') === 'expired')) {
             this.storageSrvc.setData('sessionExpire', 'active');
         }

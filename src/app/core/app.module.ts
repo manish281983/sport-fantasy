@@ -16,9 +16,11 @@ import {DashboardModule} from '../modules/dashboard/dashboard.module';
 import {TeamsModule} from '../modules/teams/teams.module';
 import {VenuesModule} from '../modules/venues/venues.module';
 import {BracketsModule} from '../modules/brackets/brackets.module';
+import {PointsModule} from '../modules/points/points.module';
 import {ScheduleModule} from '../modules/schedule/schedule.module';
 import {ResultModule} from '../modules/result/result.module';
 import {TeamInfoModule} from '../modules/team-info/team-info.module'
+import {NewsModule} from '../modules/news/news.module';
 @NgModule({
     imports: [
         BrowserModule,
@@ -34,7 +36,9 @@ import {TeamInfoModule} from '../modules/team-info/team-info.module'
         ScheduleModule,
         ResultModule,
         VenuesModule,
-        BracketsModule
+        BracketsModule,
+        PointsModule,
+        NewsModule
     ],
     declarations: [
         AppComponent

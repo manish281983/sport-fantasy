@@ -1,5 +1,22 @@
 <div>
     <div class="main-headline-component">
-        <div class="main-headline-component-title">Dream Team</div>
+        <div class="main-headline-component-title">Teams</div>
+    </div>
+    <div class="box-container team-info-table-container">
+        <div>
+            <div class="team-info-row" *ngFor="let team of teamsList">
+                <div class="row">
+                   <div class="col-sm-7">
+                       <img src="../../../assets/images/{{team.name | lowercase}}-logo.png" class="team-icon"/> <span>{{team.name}}</span>
+                   </div>
+                    <div class="col-sm-5">
+                        <div [ngClass]="result === 'W' ? 'team-info-result-win' : 'team-info-result-lose'" class="team-info-result" *ngFor="let result of team.result">{{result}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team-info-more" (click)="gotToPage()">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i> More
+        </div>
     </div>
 </div>

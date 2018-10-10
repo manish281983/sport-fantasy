@@ -1,0 +1,35 @@
+<app-sub-header [title]="'POINTS'"></app-sub-header>
+<div class="points-table">
+    <div class="box-container points-table-container">
+        <mat-tab-group  [(selectedIndex)]="selectedIndex" >
+            <mat-tab *ngFor="let option of optionList" >
+                <ng-template mat-tab-label>
+                    <span class="custom-tab-label">{{option.name}}</span>
+                </ng-template>
+                <div class="row team-headline">
+                    <div class="col-sm-6">
+                        TEAMS
+                    </div>
+                    <div class="col-sm-3">
+                        MATCHES
+                    </div>
+                    <div class="col-sm-3">
+                        POINTS
+                    </div>
+                </div>
+                <div class="row team-row" *ngFor="let team of option.ranking">
+                    <div class="col-sm-6">
+                        {{team.teamName}}
+                    </div>
+                    <div class="col-sm-3">
+                        {{team.matches}}
+                    </div>
+                    <div class="col-sm-3">
+                        {{team.points}}
+                    </div>
+                </div>
+
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

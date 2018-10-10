@@ -1,0 +1,22 @@
+<div>
+    <div class="main-headline-component">
+        <div class="main-headline-component-title">News</div>
+    </div>
+    <div class="box-container news-table">
+        <div class="news-container">
+            <div class="news-row" *ngFor="let news of newsArr">
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{news.description}}
+                        <div class="news-date">- ({{news.date}}, {{news.time}})</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="news-info-more" (click)="gotToPage()">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i> Archive
+        </div>
+    </div>
+</div>

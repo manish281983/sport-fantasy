@@ -1,0 +1,31 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
+
+.news-table{
+    margin: 10px 0;
+    .news-container{
+        .news-row{
+            border-bottom: solid 1px #e1e1e1;
+            padding: 10px 0;
+
+            .news-date {
+               color: #225fb2;
+               font-weight: italic;
+               font-size: 12px;
+
+            }
+             &:last-child {
+                        border-bottom: none;
+                    }
+        }
+
+    }
+    .news-info-more {
+            text-align: right;
+            color: #3f90dc;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+}

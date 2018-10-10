@@ -4,19 +4,25 @@ import { ResultComponent } from './result.component';
 import {ResultRoutingModule} from './result-routing.module';
 import {UIComponentModule} from '../../core/ui-components/ui-components.module';
 import {TeamResult} from './components/team-result/team-result.component';
+import {ResultDetail} from './components/result-detail/result-detail.component';
+import { MatTabsModule } from '@angular/material';
+
 
 @NgModule({
   imports: [
     CommonModule,
     ResultRoutingModule,
-    UIComponentModule
+    UIComponentModule,
+    MatTabsModule
   ],
   exports: [
-     TeamResult
+     TeamResult,
+     ResultDetail
     ],
   declarations: [
     ResultComponent,
-    TeamResult
+    TeamResult,
+    ResultDetail
   ]
 })
 export class ResultModule {

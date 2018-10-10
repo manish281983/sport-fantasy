@@ -36,7 +36,24 @@
     }
 
     .header-bottom-section{
+            .header-nav-bar{
+                margin-top: 34px;
 
+                .nav-item{
+                    color: $white;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    padding-right: 20px;
+
+                }
+                :hover {
+                    text-decoration: none;
+                    color: $slate-gray-lighter;
+                }
+            }
     }
 }
 

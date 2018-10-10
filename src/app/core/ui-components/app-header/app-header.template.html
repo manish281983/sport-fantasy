@@ -12,7 +12,11 @@
             <div class="header-bottom-section">
 
                  <div class="header-middle-section header-nav-bar hide-mobile">
-                    <a class="nav-item" [class.active]="isCurrentState('Schedule')" (click)="gotToPage('schedule')">
+                     <a class="nav-item" [class.active]="isCurrentState('Activate')"
+                        (click)="gotToPage('dashboard')">
+                         <span class="nav-title"> Leaderboard</span>
+                     </a>
+                     <a class="nav-item" [class.active]="isCurrentState('Schedule')" (click)="gotToPage('schedule')">
                         <span class="nav-title">Schedule</span>
                     </a>
 
@@ -26,12 +30,15 @@
                     <a class="nav-item" [class.active]="isCurrentState('Results')"  (click)="gotToPage('result')">
                         <span class="nav-title">Results</span>
                     </a>
-                    <a class="nav-item" [class.active]="isCurrentState('Activate')"  (click)="gotToPage('dashboard')">
-                        <span class="nav-title">Leaderboard</span>
-                    </a>
                     <a class="nav-item"  [class.active]="isCurrentState('Brackets')" (click)="gotToPage('brackets')">
                         <span class="nav-title">My Brackets</span>
                     </a>
+                     <a class="nav-item"  [class.active]="isCurrentState('Points')" (click)="gotToPage('points')">
+                         <span class="nav-title">Points</span>
+                     </a>
+                     <a class="nav-item"  [class.active]="isCurrentState('News')" (click)="gotToPage('news')">
+                         <span class="nav-title">News</span>
+                     </a>
                 </div>
 
             </div>

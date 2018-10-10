@@ -15,4 +15,10 @@ export class StorageSrvc {
         }
         return null;
     }
+    removeData(key) {
+        if (key) {
+            return sessionStorage.removeItem(key);
+        }
+        return null;
+    }
 }

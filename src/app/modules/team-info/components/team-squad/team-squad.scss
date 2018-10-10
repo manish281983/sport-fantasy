@@ -2,5 +2,24 @@
 @import '~assets/sass/base/tools.responsive';
 
 .team-squad{
+    .team-squad-table-container{
+        margin: 10px 10px 20px ;
 
+        .player-headline{
+                background: #3f90dc;
+                margin: 5px 0 ;
+                padding: 5px 0;
+                color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+        }
+            .player-row {
+                padding: 5px 0 5px 5px;
+                border-bottom: solid 1px #e1e1e1;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+
+    }
 }

@@ -1,2 +1,38 @@
 @import "~assets/sass/variables";
 @import '~assets/sass/base/tools.responsive';
+
+
+.fixture-info-table-container{
+    margin: 10px 0 20px;
+    .team-icon{
+        width: 25px;
+        height: 25px;
+        padding: 0;
+    }
+    .fixture-info-row{
+        border-bottom: solid 1px #e1e1e1;
+        padding: 10px 0;
+
+        .fixture-info-teams{
+            font-weight: bold;
+        }
+        .fixture-info-versus{
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .fixture-info-other{
+            font-size: 11px;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+
+    }
+    .fixture-info-more {
+        text-align: right;
+        color: #3f90dc;
+        cursor: pointer;
+        font-size: 11px;
+    }
+}
