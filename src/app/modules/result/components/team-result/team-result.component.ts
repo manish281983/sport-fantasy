@@ -30,7 +30,6 @@ getMatchSchedule(){
                this.matchSchedule.push(schedule);
            }
        }
-       console.log(this.matchSchedule);
 
      },
      err => {

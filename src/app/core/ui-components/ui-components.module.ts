@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
     MatMenuModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatPaginatorModule,
-    MatTabsModule
+    MatTabsModule, MatSidenavModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipeModule } from  '../pipe/pipe.module';
@@ -34,7 +34,8 @@ import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.ser
         MatPaginatorModule,
         BrowserAnimationsModule,
         PipeModule,
-        MatTabsModule
+        MatTabsModule,
+        MatSidenavModule
     ],
     exports: [
         AppHeaderComponent,

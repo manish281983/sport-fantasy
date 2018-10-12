@@ -17,10 +17,13 @@ import {TeamsModule} from '../modules/teams/teams.module';
 import {VenuesModule} from '../modules/venues/venues.module';
 import {BracketsModule} from '../modules/brackets/brackets.module';
 import {PointsModule} from '../modules/points/points.module';
+import {StatsModule} from '../modules/stats/stats.module';
 import {ScheduleModule} from '../modules/schedule/schedule.module';
 import {ResultModule} from '../modules/result/result.module';
 import {TeamInfoModule} from '../modules/team-info/team-info.module'
 import {NewsModule} from '../modules/news/news.module';
+import {MatSidenavModule
+} from '@angular/material';
 @NgModule({
     imports: [
         BrowserModule,
@@ -38,7 +41,9 @@ import {NewsModule} from '../modules/news/news.module';
         VenuesModule,
         BracketsModule,
         PointsModule,
-        NewsModule
+        NewsModule,
+        StatsModule,
+        MatSidenavModule
     ],
     declarations: [
         AppComponent

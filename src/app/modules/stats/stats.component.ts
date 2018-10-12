@@ -1,15 +1,14 @@
-
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {APISrvc} from '../../core/services/api.service';
 import {environment} from 'app/environment';
-import {APISrvc} from '../../../../core/services/api.service';
+import {MatTabChangeEvent} from '@angular/material';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 
 @Component({
-    selector: 'result-detail',
-    templateUrl: './result-detail.template.html',
-    styleUrls: ['./result-detail.scss']
+  templateUrl: './stats.component.html',
+  styleUrls: ['./stats.component.scss']
 })
-export class ResultDetail  {
+export class StatsComponent implements OnInit {
 
     scorecardData ={
         team1:{
@@ -31,6 +30,9 @@ export class ResultDetail  {
 
         }
     };
+
+    optionList= [];
+
  constructor(private apiSrvc: APISrvc, private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
@@ -40,10 +42,10 @@ export class ResultDetail  {
     }
 
     getScorecard(){
-        this.apiSrvc.getData(environment.baseURL + '/scorecard', {})
-        .subscribe(
+        this.apiSrvc.getData(environment.baseURL + '/points-table', {})
+         .subscribe(
         data => {
-        this.scorecardData= data;
+            this.optionList= data;
         },
         err => {
         console.log(err);

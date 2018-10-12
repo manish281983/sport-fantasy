@@ -72,5 +72,33 @@ section.app-container {
     padding: 10px;
 }
 
+.header-nav {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    font-size: 23px;
+    color: white;
+}
 
+
+.sidenav-table{
+    width: 50%;
+    .nav-user{
+        background: #234094;
+        padding: 5px;
+        position: relative;
+        color: $white;
+        i{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+
+        }
+    }
+    .nav-option {
+        color: #337ab7;
+        border-bottom: solid 1px #EAEAEA;
+        padding: 5px;
+    }
+}
 

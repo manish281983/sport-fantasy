@@ -29,7 +29,7 @@ export class AppHeaderComponent implements OnInit {
                 },
                 team: {
                     id: 1,
-                    name: 'India'
+                    name: 'Navratans'
                 },
                 matches: 11,
                 runs: 200,
@@ -38,7 +38,7 @@ export class AppHeaderComponent implements OnInit {
 
             };
             this.storageSrvc.setData('userDetails', JSON.stringify(obj));
-            this.storageSrvc.removeData('userDetails');
+          //  this.storageSrvc.removeData('userDetails');
 
         if ((!this.storageSrvc.getData('sessionExpire')) || (this.storageSrvc.getData('sessionExpire') === 'expired')) {
             this.storageSrvc.setData('sessionExpire', 'active');

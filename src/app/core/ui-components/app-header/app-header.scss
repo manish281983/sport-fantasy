@@ -2,43 +2,39 @@
 @import '~assets/sass/base/tools.responsive';
 
 .headerActive {
-        background: $header-background !important;
-    }
+    background: $header-background !important;
+}
 .core-header {
     .header-info {
-    max-width: 1200px;
-    min-width: auto;
-    margin: 0 auto;
-    position: relative;
-
-    .header-logo{
-        float: left;
-    }
-
-
-
-    .header-top-section {
-        padding-top: 2px;
-        margin: 15px 0 0 10px;
-        color: #fff;
-        text-transform: uppercase;
-        .header-title {
-            color: $athens-gray;
-            line-height: .8;
+        max-width: 1200px;
+        min-width: auto;
+        margin: 0 auto;
+        position: relative;
+        .header-logo{
+            float: left;
+            width: 130px;
+        }
+        .header-top-section {
+            padding-top: 2px;
+            margin: 15px 0 0 10px;
+            color: #fff;
+            text-transform: uppercase;
+            .header-title {
+                color: $athens-gray;
+                line-height: .8;
                 font-size: 32px;
-        }
-        .header-sub-title {
-            color: $athens-gray;
-            font-size: 14px;
-            font-weight: normal;
+            }
+            .header-sub-title {
+                color: $athens-gray;
+                font-size: 14px;
+                font-weight: normal;
+            }
+
         }
 
-    }
-
-    .header-bottom-section{
+        .header-bottom-section{
             .header-nav-bar{
                 margin-top: 34px;
-
                 .nav-item{
                     color: $white;
                     font-size: 16px;
@@ -47,15 +43,40 @@
                     text-transform: uppercase;
                     cursor: pointer;
                     padding-right: 20px;
-
                 }
                 :hover {
                     text-decoration: none;
                     color: $slate-gray-lighter;
                 }
             }
+        }
     }
-}
 
 }
 
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .core-header {
+        height: 60px;
+        .header-info {
+            .header-logo{
+                width: 40px;
+            }
+            .header-top-section {
+             margin: 15px 0 0 45px;
+
+                .header-title {
+                    font-size: 16px;
+                }
+                .header-sub-title {
+                    font-size: 8px;
+                }
+
+            }
+        }
+    }
+
+}

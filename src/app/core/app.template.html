@@ -1,7 +1,49 @@
 <section class="app-container">
     <app-modal></app-modal>
-    <app-header [topPosition]="topPosition"></app-header>
-    <div class="content-container" #container>
-        <router-outlet></router-outlet>
-    </div>
+    <mat-sidenav-container class="example-container" >
+        <mat-sidenav #sidenav [mode]="mode.value" class="sidenav-table" (click)="sidenav.toggle()">
+            <div>
+                <div class="nav-user">
+                    MENU
+                    <i class="fa fa-times" aria-hidden="true" (click)="sidenav.toggle()"></i>
+                </div>
+                <div class="nav-option">
+                    <i class="fa fa-home" aria-hidden="true"></i>  Home
+                </div>
+                <div class="nav-option" (click)="gotToPage('schedule')">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>  Schedule
+                </div>
+                <div class="nav-option" (click)="gotToPage('teams')">
+                    <i class="fa fa-users" aria-hidden="true"></i>  Teams
+                </div>
+                <div class="nav-option" (click)="gotToPage('venues')">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>  Grounds
+                </div>
+                <div class="nav-option" (click)="gotToPage('result')">
+                    <i class="fa fa-book" aria-hidden="true"></i>  Results
+                </div>
+                <div class="nav-option" (click)="gotToPage('stats')">
+                    <i class="fa fa-star" aria-hidden="true"></i>  Stats
+                </div>
+                <div class="nav-option" (click)="gotToPage('points')">
+                    <i class="fa fa-list-ol" aria-hidden="true"></i>  Points
+                </div>
+                <div class="nav-option" (click)="gotToPage('news')">
+                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>  News
+                </div>
+
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <app-header [topPosition]="topPosition"></app-header>
+            <i class="fa  fa-bars hide-ipad-up header-nav" aria-hidden="true" (click)="sidenav.toggle()"></i>
+            <div class="content-container" #container>
+                <router-outlet></router-outlet>
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <i class="fa  fa-bars hide-ipad header-nav" aria-hidden="true"></i>
+
 </section>

@@ -1,0 +1,175 @@
+<app-sub-header [title]="'STATS'"></app-sub-header>
+<div class="scorecard">
+        <div class="box-container points-table-container">
+            <mat-tab-group  [(selectedIndex)]="selectedIndex" >
+                <mat-tab *ngFor="let option of optionList" >
+                    <ng-template mat-tab-label>
+                        <span class="custom-tab-label">{{option.name}}</span>
+                    </ng-template>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="scorecard-result">
+                                <div class="scorecard-headline row">
+                                    <div class="col-sm-2">
+                                        Batsman
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                Runs
+                                            </div>
+                                            <div class="col-sm-1">
+                                                M
+                                            </div>
+                                            <div class="col-sm-1">
+                                                Inn
+                                            </div>
+                                            <div class="col-sm-1">
+                                                NO
+                                            </div>
+                                            <div class="col-sm-1">
+                                                HS
+                                            </div>
+                                            <div class="col-sm-1">
+                                                Avg
+                                            </div>
+                                            <div class="col-sm-1">
+                                                4s
+                                            </div>
+                                            <div class="col-sm-1">
+                                                6s
+                                            </div>
+                                            <div class="col-sm-1">
+                                                25
+                                            </div>
+                                            <div class="col-sm-1">
+                                                50
+                                            </div>
+                                            <div class="col-sm-1">
+                                               100
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        Team
+                                    </div>
+                                </div>
+                                <div class="scorecard-player row" *ngFor="let player of option.batting">
+                                    <div class="col-sm-2">
+                                        <a href="#">{{player.name}}</a>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                {{player.runs}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.matches}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.innings}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.no}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.hs}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.avg}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.four}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.six}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.quater}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.half}}
+                                            </div>
+                                            <div class="col-sm-1">
+                                                {{player.full}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a href="#">{{player.team.name}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="scorecard-result">
+                                <div class="scorecard-headline row">
+                                    <div class="col-sm-3">
+                                        Bowler
+                                    </div>
+                                    <div class="col-sm-1">
+                                        W
+                                    </div>
+                                    <div class="col-sm-1">
+                                        Inn
+                                    </div>
+                                    <div class="col-sm-1">
+                                        O
+                                    </div>
+                                    <div class="col-sm-1">
+                                        Runs
+                                    </div>
+                                    <div class="col-sm-1">
+                                        BBI
+                                    </div>
+                                    <div class="col-sm-1">
+                                        Avg
+                                    </div>
+                                    <div class="col-sm-1">
+                                        Eco
+                                    </div>
+                                    <div class="col-sm-2">
+                                        Team
+                                    </div>
+                                </div>
+                                <div class="scorecard-player row" *ngFor="let player of option.bowling">
+                                    <div class="col-sm-3">
+                                        <a href="#">{{player.name}}</a>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.wickets}}
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.innings}}
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.overs}}
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.runs}}
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.best}}
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.average}}
+                                    </div>
+                                    <div class="col-sm-1">
+                                        {{player.economy}}
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <a href="#">{{player.team.name}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+</div>
+

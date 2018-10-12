@@ -28,21 +28,7 @@ export class AppRoutingModule {
 
     constructor(router: Router, resolutionSrvc: ResolutionSrvc) {
         const desktopRoutes = router.config;
-        resolutionSrvc.width.subscribe(width => {
-            if (width > this.MOBILE_WIDTH) {
-                router.resetConfig(desktopRoutes);
-            }
-            else {
-                if (!this.mobileRoutes) {
-                    this.mobileRoutes = this.getRoutes(router.config, '');
-                    this.mobileRoutes.filter((obj, pos, arr) => {
-                        return arr.map(mapObj => mapObj['path']).indexOf(obj['path']) === pos;
-                    });
-                }
-                router.resetConfig(this.mobileRoutes);
-            }
-            router.navigateByUrl(router.url);
-        });
+        router.resetConfig(desktopRoutes);
     }
 
     getRoutes(routes: Routes, path: string, mobileRoutes: any[] = []) {
