@@ -36,3 +36,24 @@
         font-size: 11px;
     }
 }
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .fixture-info-table-container{
+        .fixture-info-row{
+
+            .fixture-info-teams-detail{
+                margin: 10px 0;
+            }
+
+             .fixture-info-other{
+                       text-align: right;
+                    }
+        }
+
+    }
+}

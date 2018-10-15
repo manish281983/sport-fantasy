@@ -8,7 +8,7 @@
                     <i class="fa fa-times" aria-hidden="true" (click)="sidenav.toggle()"></i>
                 </div>
                 <div class="nav-option">
-                    <i class="fa fa-home" aria-hidden="true"></i>  Home
+                    <i class="fa fa-home" (click)="gotToPage('dashboard')" aria-hidden="true"></i>  Home
                 </div>
                 <div class="nav-option" (click)="gotToPage('schedule')">
                     <i class="fa fa-calendar" aria-hidden="true"></i>  Schedule

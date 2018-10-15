@@ -1,4 +1,4 @@
-<div class="match-schedule">
+<div class="match-schedule hide-mobile">
     <div class="match-schedule-container" *ngFor="let schedule of matchSchedule">
         <div class="match-schedule-date">
             {{schedule.date | date:'EEEE, dd MMM yyyy'}}<span>{{schedule.time}}</span>
@@ -19,4 +19,31 @@
             </div>
         </div>
     </div>
+</div>
+<div class="fixture-info-table hide-ipad-up">
+    <div class="main-headline-component">
+        <div class="main-headline-component-title">Fixtures Info</div>
+    </div>
+    <div class="box-container fixture-info-table-container">
+        <div>
+            <div class="fixture-info-row" *ngFor="let schedule of matchSchedule">
+                <div >
+                    <div>
+                        <strong>Match:</strong> {{schedule.match}} <i class="fa fa-map-marker" aria-hidden="true"></i> {{schedule.venue.ground}}, {{schedule.venue.city}}
+                    </div>
+                    <div class="fixture-info-teams">
+                        <div class="fixture-info-teams-detail">
+                            <img src="../../../assets/images/{{schedule.team1.name | lowercase}}-logo.png" class="team-icon"/> <span>{{schedule.team1.name}}</span>
+                        </div>
+                        <img src="../../../assets/images/{{schedule.team2.name | lowercase}}-logo.png" class="team-icon"/>  <span>{{schedule.team2.name}}</span>
+                    </div>
+                    <div class="fixture-info-other">
+                        <div>{{schedule.time}}- {{schedule.date | date:'dd MMM, yyyy'}}</div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
