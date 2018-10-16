@@ -1,6 +1,7 @@
 @import "~assets/sass/variables";
 @import '~assets/sass/base/tools.responsive';
 
+
 .match-result{
     .match-result-container{
         border-top: 1px solid $firefly !important;
@@ -71,4 +72,69 @@
 
     }
 
+}
+
+
+.result-info-table{
+    margin: 10px;
+    overflow-y: auto;
+        height: calc(100vh - 65px);
+    .result-info-table-container{
+        margin: 10px 0 20px;
+        .team-icon{
+            width: 25px;
+            height: 25px;
+            padding: 0;
+        }
+        .result-info-row{
+            border-bottom: solid 1px #e1e1e1;
+            padding: 10px 0;
+
+            .result-info-teams{
+                font-weight: bold;
+
+                .result-info-team1{
+                    padding-bottom: 5px;
+                }
+            }
+            .result-info-versus{
+                text-align: center;
+                font-weight: normal;
+            }
+
+            .result-info-other{
+                font-size: 11px;
+
+                .result-info-detail{
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+
+        }
+    }
+}
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .result-info-table-container{
+        .result-info-row{
+
+            .result-info-teams-detail{
+                margin: 10px 0;
+            }
+
+            .result-info-other{
+               text-align: right;
+            }
+        }
+
+    }
 }

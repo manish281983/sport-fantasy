@@ -1,44 +1,64 @@
 @import "~assets/sass/variables";
 @import '~assets/sass/base/tools.responsive';
 
-.teams {
+
+.team-table{
     margin: 10px;
-    .team-box{
-        min-width: 150px;
-        .team{
-            background-size: cover;
-            border-radius: 0.6rem;
-            color: $white;
-            text-align: center;
-            padding: 10px;
-            margin: 15px 0;
-            .team-icon{
-                background: white;
-                display: inline-block;
-                 border-radius: 50px;
-                 width: 90px;
-                 height: 90px;
-                 padding: 15px;
-                img{
-                    height: 60px;
+    .team-table-container{
+        margin: 10px 0 20px ;
+
+        /deep/.mat-tab-label, /deep/.mat-tab-label-active{
+             min-width: 80px !important;
+             padding: 3px!important;
+             margin: 3px!important;
+
+        }
+
+        .team-row {
+            padding: 5px 0 5px 5px;
+            border-bottom: solid 1px #e1e1e1;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .team-headline{
+            background: #3f90dc;
+            margin: 5px 0 ;
+            padding: 5px 0;
+            color: #fff;
+                font-size: 12px;
+                font-weight: bold;
+        }
+
+
+    }
+}
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .team-table{
+        margin: 10px 0;
+
+        .team-table-container{
+            .team-row{
+                margin: 0;
+
+                .col-xs-3{
+                    text-align: center;
                 }
             }
-            .team-name{
-                font-size: $font-size-large + 4;
-                font-weight: bold;
-                margin-top: 10px;
-            }
-            .team-profile {
-                background: rgba(0, 0, 0, 0.15);
-                border-radius: 15px;
-                font-size: $font-size-small;
-                padding: 5px 10px;
-                display: inline-block;
-                color: $white;
-                font-weight: bold;
 
+            .team-headline {
+
+                .col-xs-3{
+                    text-align: center;
+                }
             }
         }
     }
-
 }

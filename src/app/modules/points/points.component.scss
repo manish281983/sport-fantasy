@@ -34,3 +34,31 @@
 
     }
 }
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .points-table{
+        margin: 10px 0;
+
+        .points-table-container{
+            .team-row{
+                margin: 0;
+
+                .col-xs-3{
+                    text-align: center;
+                }
+            }
+
+            .team-headline {
+
+                .col-xs-3{
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

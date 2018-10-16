@@ -6,14 +6,15 @@ import {UIComponentModule} from '../../core/ui-components/ui-components.module';
 import {TeamResult} from './components/team-result/team-result.component';
 import {ResultDetail} from './components/result-detail/result-detail.component';
 import { MatTabsModule } from '@angular/material';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   imports: [
     CommonModule,
     ResultRoutingModule,
     UIComponentModule,
-    MatTabsModule
+    MatTabsModule,
+    MatExpansionModule
   ],
   exports: [
      TeamResult,

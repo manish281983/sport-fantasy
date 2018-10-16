@@ -48,5 +48,9 @@ export class FixturesInfo {
     gotToPage(){
         this.router.navigate(['/schedule'], {relativeTo: this.activatedRoute});
     }
+
+     gotToResult(id){
+              this.router.navigate(['/result-detail/'+id], {relativeTo: this.activatedRoute});
+         }
 }
 

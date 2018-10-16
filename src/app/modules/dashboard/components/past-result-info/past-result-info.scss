@@ -45,3 +45,24 @@
         font-size: 11px;
     }
 }
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .result-info-table-container{
+        .result-info-row{
+
+            .result-info-teams-detail{
+                margin: 10px 0;
+            }
+
+            .result-info-other{
+               text-align: right;
+            }
+        }
+
+    }
+}

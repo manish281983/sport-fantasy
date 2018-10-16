@@ -1,5 +1,5 @@
 
-<div class="match-result">
+<div class="match-result hide-mobile">
     <div class="match-result-container" *ngFor="let schedule of matchSchedule"  (click)="gotToResult(schedule.id)">
         <div class="match-result-info">
             <div class="row">
@@ -23,6 +23,40 @@
                     <div class="match-result-sub-healdine">
                         <span> {{schedule.date | date:'EEEE, dd MMM yyyy'}}, </span>{{schedule.time}}
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="result-info-table hide-ipad-up">
+    <div class="box-container result-info-table-container">
+        <div>
+            <div class="result-info-row" *ngFor="let result of matchSchedule" (click)="gotToResult(result.id)">
+                <div>
+                    <strong>Match:</strong> {{result.match}} <i class="fa fa-map-marker" aria-hidden="true"></i> {{result.venue.ground}}, {{result.venue.city}}
+                </div>
+                <div class="row">
+                    <div class="col-sm-7 col-xs-12">
+                        <div class="result-info-teams">
+                            <div class="result-info-teams-detail">
+                                <img src="../../../assets/images/{{result.team1.name | lowercase}}-logo.png" class="team-icon"/> <span>{{result.team1.name}}</span> {{result.result.team1}}
+                            </div>
+                            <div class="result-info-teams-detail">
+                                <img src="../../../assets/images/{{result.team2.name | lowercase}}-logo.png" class="team-icon"/>  <span>{{result.team2.name}}</span> {{result.result.team2}}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-5" class="result-info-other hide-mobile">
+                        <div class="result-info-detail" [style.color]="'#'+result.result.color"> {{result.result.description}}</div>
+                        <div>{{result.time}}- {{result.date | date:'dd MMM, yyyy'}}</div>
+                        <div><i class="fa fa-map-marker" aria-hidden="true"></i> {{result.venue.ground}}, {{result.venue.city}}</div>
+                    </div>
+                </div>
+                <div class="hide-ipad-up">
+                    <div class="result-info-detail" [style.color]="'#'+result.result.color"> {{result.result.description}}</div>
+                    <div class="result-info-other">{{result.time}}- {{result.date | date:'dd MMM, yyyy'}}</div>
                 </div>
             </div>
         </div>

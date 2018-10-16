@@ -2,6 +2,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {environment} from 'app/environment';
 import {APISrvc} from '../../../../core/services/api.service';
+import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'team-schedule',
@@ -13,8 +14,8 @@ export class TeamSchedule  implements OnInit {
 
   matchSchedule=[];
   currentPage: string;
-    constructor(private apiSrvc: APISrvc) {
-     }
+    constructor(private apiSrvc: APISrvc, private router: Router, private activatedRoute: ActivatedRoute) {
+      }
 
     ngOnInit() {
       this.getMatchSchedule();
@@ -36,4 +37,8 @@ export class TeamSchedule  implements OnInit {
             console.log(err);
         });
     }
+
+     gotToResult(id){
+          this.router.navigate(['/result-detail/'+id], {relativeTo: this.activatedRoute});
+     }
   }

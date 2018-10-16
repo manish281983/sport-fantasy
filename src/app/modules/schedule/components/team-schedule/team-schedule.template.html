@@ -1,5 +1,5 @@
 <div class="match-schedule hide-mobile">
-    <div class="match-schedule-container" *ngFor="let schedule of matchSchedule">
+    <div class="match-schedule-container" *ngFor="let schedule of matchSchedule" (click)="gotToResult(schedule.id)">
         <div class="match-schedule-date">
             {{schedule.date | date:'EEEE, dd MMM yyyy'}}<span>{{schedule.time}}</span>
         </div>
@@ -21,12 +21,9 @@
     </div>
 </div>
 <div class="fixture-info-table hide-ipad-up">
-    <div class="main-headline-component">
-        <div class="main-headline-component-title">Fixtures Info</div>
-    </div>
     <div class="box-container fixture-info-table-container">
         <div>
-            <div class="fixture-info-row" *ngFor="let schedule of matchSchedule">
+            <div class="fixture-info-row" *ngFor="let schedule of matchSchedule" (click)="gotToResult(schedule.id)">
                 <div >
                     <div>
                         <strong>Match:</strong> {{schedule.match}} <i class="fa fa-map-marker" aria-hidden="true"></i> {{schedule.venue.ground}}, {{schedule.venue.city}}

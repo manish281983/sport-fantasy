@@ -22,6 +22,11 @@ export class ResultDetail  {
         },
         summary:{
             match: null,
+            result: null,
+            mom: {
+                id: null,
+                name: null
+            },
             team1: {
                 team: null
             },
@@ -44,10 +49,15 @@ export class ResultDetail  {
         .subscribe(
         data => {
         this.scorecardData= data;
+        //this.scorecardData.summary.result= null;
         },
         err => {
         console.log(err);
         });
+    }
+
+    getEconomy(player){
+        return (player.runs/player.over).toFixed(1);
     }
 
 }

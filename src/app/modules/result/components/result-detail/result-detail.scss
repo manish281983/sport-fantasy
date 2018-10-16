@@ -3,23 +3,71 @@
 
 .scorecard{
     margin: 20px;
+ overflow-y: auto;
+    height: calc(100vh - 210px);
 
-    .scorecard-result{
-        margin: 10px;
-        .scorecard-team{
-            background: #4A4A4A;
-            color: #fff;
-            padding: 8px 10px;
+   .box-container{
+        .scorecard-summary-tab{
+        padding: 0;
         }
+
+        .scorecard-match-detail{
+            div{
+                padding: 0;
+            }
+
+        }
+        .scorecard-result{
+            margin: 10px 0;
+            .row{
+                margin: 0;
+            }
+            .scorecard-team{
+                background: #3f90dc;
+                color: #fff;
+                padding: 8px 10px;
+
+
+            }
+            .scorecard-headline{
+                background: #ecebeb;
+                color: #666;
+                padding: 8px 10px;
+            }
+            .scorecard-player {
+                padding: 8px 10px;
+                border-bottom: solid 1px #e1e1e1;
+                &:last-child {
+                    border-bottom: none;
+                }
+
+            }
+        }
+
+    }
+}
+
+
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .scorecard{
+        margin: 0;
         .scorecard-headline{
-            background: #ecebeb;
-            color: #666;
-            padding: 8px 10px;
+            .col-xs-1{
+                text-align: center;
+            }
         }
-        .scorecard-player {
-            padding: 8px 10px;
-            border-bottom: solid 1px #e1e1e1;
+        .scorecard-player{
+            padding: 0;
 
+            .col-xs-1{
+                text-align: center;
+            }
         }
     }
 }

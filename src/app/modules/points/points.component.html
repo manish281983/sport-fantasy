@@ -7,24 +7,24 @@
                     <span class="custom-tab-label">{{option.name}}</span>
                 </ng-template>
                 <div class="row team-headline">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-xs-6">
                         TEAMS
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-3">
                         MATCHES
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-3">
                         POINTS
                     </div>
                 </div>
                 <div class="row team-row" *ngFor="let team of option.ranking">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-xs-6">
                         {{team.teamName}}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-3">
                         {{team.matches}}
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-xs-3">
                         {{team.points}}
                     </div>
                 </div>

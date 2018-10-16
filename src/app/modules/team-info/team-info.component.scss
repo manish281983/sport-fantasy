@@ -4,7 +4,7 @@
 
 .team-info{
     .team-header{
-        padding: 15px 15px 0 15px;
+        padding: 5px 15px 0 15px;
         position: relative;
         .team-logo {
             position: absolute;
@@ -64,4 +64,31 @@
         }
     }
 
+}
+
+
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .team-info{
+        .team-header{
+             .team-detail{
+                .team-name{
+                    font-size: 25px;
+                    padding-left: 72px;
+                }
+                 .team-icon{
+                    width: 60px;
+                     height: 60px;
+
+                    img{
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
 }

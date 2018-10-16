@@ -2,10 +2,8 @@
 @import '~assets/sass/base/tools.responsive';
 
 .match-schedule{
-     overflow-y: auto;
-        height: calc(100vh - #{$header-height});
-
-
+    overflow-y: auto;
+    height: calc(100vh - #{$header-height});
     .match-schedule-container{
         border-top: 1px solid $firefly !important;
         border: 1px solid $catskill-white;

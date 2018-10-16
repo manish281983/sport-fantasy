@@ -27,6 +27,8 @@ export class TeamInfoComponent implements OnInit {
       .subscribe(
         data => {
           this.teamInfo= data;
+               console.log(this.teamInfo);
+
         },
         err => {
             console.log(err);

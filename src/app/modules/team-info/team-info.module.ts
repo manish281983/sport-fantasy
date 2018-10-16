@@ -6,6 +6,7 @@ import {TeamSquad} from './components/team-squad/team-squad.component';
 import {UIComponentModule} from '../../core/ui-components/ui-components.module';
 import {ScheduleModule} from '../schedule/schedule.module';
 import {ResultModule} from '../result/result.module';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {ResultModule} from '../result/result.module';
     TeamInfoRoutingModule,
     UIComponentModule,
     ScheduleModule,
-    ResultModule
+    ResultModule,
+    MatChipsModule
   ],
   declarations: [
     TeamInfoComponent,

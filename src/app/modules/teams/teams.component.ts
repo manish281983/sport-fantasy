@@ -10,36 +10,47 @@ import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
   styleUrls: ['./teams.component.scss']
 })
 export class TeamsComponent implements OnInit {
-    poolsList= [];
-    teamsList= [];
 
-  constructor(private apiSrvc: APISrvc, private router: Router, private activatedRoute: ActivatedRoute) {
-   }
-
-  ngOnInit() {
-        this.getPoolInfo();
-  }
-tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
-    this.teamsList=this.poolsList[tabChangeEvent.index].teamlist;
+    constructor(private apiSrvc: APISrvc, private router: Router, private activatedRoute: ActivatedRoute) {
 }
 
-  getPoolInfo(){
-    this.apiSrvc.getData(environment.baseURL + '/pools', {})
-    .subscribe(
-      data => {
-        this.poolsList= data;
-         this.teamsList=this.poolsList[0].teamlist;
-      },
-      err => {
-          console.log(err);
-      });
-  }
+     optionList= [];
+
+      getPointsTable(){
+           this.apiSrvc.getData(environment.baseURL + '/pools', {})
+           .subscribe(
+             data => {
+                 this.optionList= data;
+                 console.log(data);
+             },
+             err => {
+                 console.log(err);
+             });
+         }
+         ngOnInit() {
+             this.getPointsTable();
+         }
+
+     private _selectedIndex = 1;
+
+
+     get selectedIndex() {
+         return this._selectedIndex;
+     }
+
+     set selectedIndex(val: number) {
+         if (val) {
+             this._selectedIndex = val;
+         } else {
+             this._selectedIndex = 0;
+         }
+     }
 
   getTeamDetails(team){
     this.router.navigate(['/team-info/'+team.id], {relativeTo: this.activatedRoute});
   }
 
-  getBgColor (team){
-    return '#'+team.color;
+
+
   }
-}
+

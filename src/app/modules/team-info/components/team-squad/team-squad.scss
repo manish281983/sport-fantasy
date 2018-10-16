@@ -2,9 +2,15 @@
 @import '~assets/sass/base/tools.responsive';
 
 .team-squad{
+    .box-container{
+        overflow: hidden;
+    }
     .team-squad-table-container{
         margin: 10px 10px 20px ;
+            overflow: auto;
 
+    .team-squad-table-box{
+        min-width: 700px;
         .player-headline{
                 background: #3f90dc;
                 margin: 5px 0 ;
@@ -21,5 +27,41 @@
                 }
             }
 
+            .squad-bowler{
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .team-squad-players{
+            margin: 10px 10px 23px 10px;
+        .main-headline-component{
+            margin-bottom: 15px;
+        }
+        .team-squad-players-list{
+            display: table;
+            .mat-chip{
+                cursor: pointer;
+                    display: initial !important;
+                    margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .team-squad{
+        .box-container{
+            padding: 10px 0;
+        }
+        .team-squad-table-container{
+            margin: 0;
+        }
     }
 }
