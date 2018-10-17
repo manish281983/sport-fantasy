@@ -1,0 +1,24 @@
+<app-sub-header [title]="'PLAYER PROFILE'"></app-sub-header>
+<div class="player-profile-table">
+    <div class="player-profile-container">
+        <img src="../../../assets/images/avatar.png" class="team-icon"/>
+            <div class="row player-overview">
+                <div class="col-sm-6 col-xs-12">
+                    <strong>Name:</strong> {{playerInfo.name}}
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                    <strong>Role:</strong>	{{playerInfo.role}}
+                </div>
+            </div>
+            <div class="row player-overview">
+                <div class="col-sm-6 col-xs-12"  *ngIf="playerInfo.battingStyle">
+                    <strong>Batting style:</strong>	{{playerInfo.battingStyle}}
+                </div>
+                <div class="col-sm-6 col-xs-12" *ngIf="playerInfo.bowlingStyle">
+                    <strong>Bowling style:</strong> {{playerInfo.bowlingStyle}}
+                </div>
+            </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+    <team-squad [players]="players" [isTeamList]="false"></team-squad>
+</div>

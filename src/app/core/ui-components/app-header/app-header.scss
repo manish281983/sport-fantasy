@@ -6,7 +6,6 @@
 }
 .core-header {
     .header-info {
-        max-width: 1200px;
         min-width: auto;
         margin: 0 auto;
         position: relative;
@@ -52,6 +51,21 @@
         }
     }
 
+    .header-right-section{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        div{
+            cursor: pointer;
+        }
+        .user-profile-image {
+            width: 25px;
+            height: 25px;
+            border-radius: 13px;
+        }
+    }
+
 }
 
 
@@ -80,3 +94,4 @@
     }
 
 }
+

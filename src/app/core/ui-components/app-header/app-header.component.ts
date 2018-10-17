@@ -2,11 +2,17 @@
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {StorageSrvc} from 'app/core/services/storage.service';
-
-import {Component, OnInit, Input} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {Component, OnInit, Input, Inject} from '@angular/core';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
+export interface DialogData {
+  password: string;
+  name: string;
+}
+
 @Component({
     selector: 'app-header',
     templateUrl: './app-header.template.html',
@@ -15,31 +21,17 @@ import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
 export class AppHeaderComponent implements OnInit {
     pageTitle: string;
     @Input() topPosition: boolean;
+    userDetails= {
+        name: null
+    };
     constructor(private router: Router,
-                private activatedRoute: ActivatedRoute, private storageSrvc: StorageSrvc) {
+                private activatedRoute: ActivatedRoute, private storageSrvc: StorageSrvc, public dialog: MatDialog) {
     }
 
     ngOnInit() {
-
-            let obj= {
-                name: 'Manish Rawat',
-                pool: {
-                    id: 1,
-                    name: 'Div 1'
-                },
-                team: {
-                    id: 1,
-                    name: 'Navratans'
-                },
-                matches: 11,
-                runs: 200,
-                wickets: 10,
-                role: 'All Rounder'
-
-            };
-            this.storageSrvc.setData('userDetails', JSON.stringify(obj));
-            this.storageSrvc.removeData('userDetails');
-
+        if(this.storageSrvc.getData('userDetails')){
+            this.userDetails= JSON.parse(this.storageSrvc.getData('userDetails'));
+        }
         if ((!this.storageSrvc.getData('sessionExpire')) || (this.storageSrvc.getData('sessionExpire') === 'expired')) {
             this.storageSrvc.setData('sessionExpire', 'active');
         }
@@ -72,4 +64,67 @@ export class AppHeaderComponent implements OnInit {
         /* TODO : Find right way to hide back button when other views are ready */
         return this.pageTitle !== 'My Events';
     }
+
+    password: string;
+    name: string;
+
+     openDialog(): void {
+        const dialogRef = this.dialog.open(LoginDialog, {
+          width: '350px',
+          data: {name: this.name, password: this.password}
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          this.password = result;
+        });
+      }
+
+      logoutUser(){
+        this.storageSrvc.removeData('userDetails');
+         window.location.reload();
+
+      }
+}
+@Component({
+  selector: 'login-dialog',
+  templateUrl: 'login-dialog.html',
+})
+export class LoginDialog {
+
+
+  constructor(
+    public dialogRef: MatDialogRef<LoginDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private router: Router,private storageSrvc: StorageSrvc,
+                                                                      private activatedRoute: ActivatedRoute) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  loginAction(data): void{
+
+        let obj= {
+            name: 'Manish Rawat',
+            pool: {
+                id: 1,
+                name: 'Div 1'
+            },
+            team: {
+                id: 1,
+                name: 'Navratans'
+            },
+            matches: 11,
+            runs: 200,
+            wickets: 10,
+            role: 'All Rounder'
+
+        };
+        this.storageSrvc.setData('userDetails', JSON.stringify(obj));
+
+        this.dialogRef.close();
+        window.location.reload();
+
+  }
+
 }

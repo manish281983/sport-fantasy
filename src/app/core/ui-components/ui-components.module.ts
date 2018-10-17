@@ -5,12 +5,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
     MatMenuModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatPaginatorModule,
-    MatTabsModule, MatSidenavModule
+    MatTabsModule, MatSidenavModule, MatChipsModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PipeModule } from  '../pipe/pipe.module';
 
-import {AppHeaderComponent}  from './app-header/app-header.component';
+import {AppHeaderComponent, LoginDialog}  from './app-header/app-header.component';
 import {AppSubHeaderComponent}  from './app-sub-header/app-sub-header.component';
 import {AppFooterComponent}  from './app-footer/app-footer.component';
 import {AppModalComponent}  from './app-modal/app-modal.component';
@@ -22,6 +22,7 @@ import {ServiceHandlingComponent}  from './sw-service-handling/sw-service-handli
 import {ModalSrvc} from './app-modal/app-modal.service';
 import {SnackBarSrvc} from './sw-snack-bar/sw-snack-bar.service';
 import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.service';
+import {TeamSquad} from '../../modules/team-info/components/team-squad/team-squad.component';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.ser
         BrowserAnimationsModule,
         PipeModule,
         MatTabsModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatChipsModule
     ],
     exports: [
         AppHeaderComponent,
@@ -46,7 +48,9 @@ import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.ser
         MessageDisplayComponent,
         PaginationComponent,
         SnackBarComponent,
-        ServiceHandlingComponent
+        ServiceHandlingComponent,
+        TeamSquad
+
     ],
     declarations: [
         AppHeaderComponent,
@@ -57,10 +61,14 @@ import {ServiceHandlingSrvc} from './sw-service-handling/sw-service-handling.ser
         MessageDisplayComponent,
         PaginationComponent,
         SnackBarComponent,
-        ServiceHandlingComponent
+        ServiceHandlingComponent,
+        TeamSquad,
+        LoginDialog
+
     ],
     entryComponents: [
-        SnackBarComponent
+        SnackBarComponent,
+        LoginDialog
     ],
     providers: [
         ModalSrvc,

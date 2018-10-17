@@ -22,6 +22,8 @@ import {ScheduleModule} from '../modules/schedule/schedule.module';
 import {ResultModule} from '../modules/result/result.module';
 import {TeamInfoModule} from '../modules/team-info/team-info.module'
 import {NewsModule} from '../modules/news/news.module';
+import {PlayerProfileModule} from '../modules/player-profile/player-profile.module';
+
 import {MatSidenavModule
 } from '@angular/material';
 @NgModule({
@@ -43,7 +45,8 @@ import {MatSidenavModule
         PointsModule,
         NewsModule,
         StatsModule,
-        MatSidenavModule
+        MatSidenavModule,
+        PlayerProfileModule
     ],
     declarations: [
         AppComponent

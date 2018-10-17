@@ -1,0 +1,41 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
+
+
+.player-profile-table{
+    margin: 10px;
+    .player-profile-container{
+        margin: 10px;
+        .team-icon{
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            float: left;
+        }
+        .player-overview{
+                padding-bottom: 10px;
+
+            .col-xs-12{
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+}
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+    .player-profile-table{
+        margin: 10px 0;
+        .team-icon{
+            width: 60px;
+            height: 60px;
+        }
+
+    }
+}

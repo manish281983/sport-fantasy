@@ -1,11 +1,10 @@
 <div class="team-squad">
-    <div class="team-squad-players">
+    <div class="team-squad-players" [hidden]="!isTeamList">
         <div class="main-headline-component">
             <div class="main-headline-component-title">Players</div>
-
         </div>
         <mat-chip-list class="team-squad-players-list mat-chip-list-stacked">
-            <mat-chip *ngFor="let player of players" >
+            <mat-chip *ngFor="let player of players" (click)="gotToPlayerProfile(player.id) ">
                 {{player.name}}
             </mat-chip>
         </mat-chip-list>
@@ -17,8 +16,11 @@
                     <div class="main-headline-component-title">Batting Summary</div>
                 </div>
                 <div class="row player-headline">
-                    <div class="col-sm-3 col-xs-3">
+                    <div class="col-sm-3 col-xs-3" [hidden]="!isTeamList">
                         PLAYER
+                    </div>
+                    <div class="col-sm-3 col-xs-3" [hidden]="isTeamList">
+                        SERIES
                     </div>
                     <div class="col-sm-1 col-xs-1">
                         MAT
@@ -46,9 +48,12 @@
                     </div>
                 </div>
                 <div class="player-row" *ngFor="let player of players">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-3">
+                    <div class="row" >
+                        <div class="col-sm-3 col-xs-3" [hidden]="!isTeamList">
                             {{player.name}}
+                        </div>
+                        <div class="col-sm-3 col-xs-3" [hidden]="isTeamList">
+                            {{player.series}}
                         </div>
                         <div class="col-sm-1 col-xs-1">
                             {{player.batting.match}}
@@ -83,8 +88,11 @@
                     <div class="main-headline-component-title">Bowling Summary</div>
                 </div>
                 <div class="row player-headline">
-                    <div class="col-sm-3 col-xs-3">
+                    <div class="col-sm-3 col-xs-3" [hidden]="!isTeamList">
                         PLAYER
+                    </div>
+                    <div class="col-sm-3 col-xs-3" [hidden]="isTeamList">
+                        SERIES
                     </div>
                     <div class="col-sm-1 col-xs-1">
                         MAT
@@ -116,8 +124,11 @@
                 </div>
                 <div class="player-row" *ngFor="let player of players">
                     <div class="row">
-                        <div class="col-sm-3 col-xs-3">
+                        <div class="col-sm-3 col-xs-3" [hidden]="!isTeamList">
                             {{player.name}}
+                        </div>
+                        <div class="col-sm-3 col-xs-3" [hidden]="isTeamList">
+                            {{player.series}}
                         </div>
                         <div class="col-sm-1 col-xs-1">
                             {{player.bowling.match}}

@@ -5,7 +5,7 @@
     <div class="box-container result-info-table-container">
         <div>
             <div class="result-info-row" *ngFor="let result of matchResult" (click)="gotToResult(result.id)">
-                <div>
+                <div class="hide-ipad-up">
                     <strong>Match:</strong> {{result.match}} <i class="fa fa-map-marker" aria-hidden="true"></i> {{result.venue.ground}}, {{result.venue.city}}
                 </div>
                 <div class="row">
@@ -17,7 +17,6 @@
                             <div class="result-info-teams-detail">
                                 <img src="../../../assets/images/{{result.team2.name | lowercase}}-logo.png" class="team-icon"/>  <span>{{result.team2.name}}</span> {{result.result.team2}}
                             </div>
-
                         </div>
                     </div>
                     <div class="col-sm-5" class="result-info-other hide-mobile">

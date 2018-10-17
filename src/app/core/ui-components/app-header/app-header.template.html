@@ -7,8 +7,8 @@
             <div class="header-top-section">
                     <div class="header-title">2019 Atlanta Cricket League™</div>
                     <div class="header-sub-title">14 June - 15 July</div>
-
             </div>
+
             <div class="header-bottom-section">
 
                  <div class="header-middle-section header-nav-bar hide-mobile">
@@ -41,6 +41,15 @@
                      </a>
                 </div>
 
+            </div>
+        </div>
+        <div  class="header-right-section">
+            <div (click)="openDialog()" *ngIf="!userDetails.name">
+                Login
+             <!--   <img class="user-profile-image" src="assets/images/avatar.png" >-->
+            </div>
+            <div (click)="logoutUser()" *ngIf="userDetails.name">
+                 Logout
             </div>
         </div>
     </section>

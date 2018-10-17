@@ -6,40 +6,38 @@ import {StorageSrvc} from 'app/core/services/storage.service';
 
 
 @Component({
-  templateUrl: './team-info.component.html',
-  styleUrls: ['./team-info.component.scss']
+  templateUrl: './player-profile.component.html',
+  styleUrls: ['./player-profile.component.scss']
 })
-export class TeamInfoComponent implements OnInit {
- teamInfo= {
-        captain: '',
-        viceCaptain: ''
-    };
+export class PlayerProfileComponent implements OnInit {
 
-   selectedOption='Squads';
+    players: any;
+    playerInfo={
+        name: null,
+        role: null
+    };
    constructor(private apiSrvc: APISrvc, private router: Router, private activatedRoute: ActivatedRoute, private storageSrvc: StorageSrvc) {
-           }
+             }
 
     ngOnInit() {
-         this.getTeamDetail(this.activatedRoute.snapshot.params['id']);
+           this.getPlayerDetail(this.activatedRoute.snapshot.params['id']);
+
   }
 
-  getTeamDetail(teamId){
-      this.apiSrvc.getData(environment.baseURL + '/team-info/'+ teamId, {})
+
+  getPlayerDetail(playerId){
+      this.apiSrvc.getData(environment.baseURL + '/player-info/'+ playerId, {})
       .subscribe(
         data => {
-          this.teamInfo= data;
-               console.log(this.teamInfo);
+         this.players= [];
+         this.playerInfo= data;
+          this.players.push(data);
 
         },
         err => {
             console.log(err);
         });
     }
-    selectInfoOption(option){
-        this.selectedOption= option;
-    }
-
-
 
 
 }
