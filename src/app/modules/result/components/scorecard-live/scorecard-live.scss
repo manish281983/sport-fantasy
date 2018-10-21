@@ -1,0 +1,95 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
+.scorecard-live{
+    width: 100%;
+    .over-summary{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .row{
+        margin: 0;
+    }
+
+    .bowler-group{
+      font-size: 18px;
+      padding: 5px;
+    }
+
+    .batsman-radio-group {
+      display: inline-flex;
+      flex-direction: column;
+      font-size: 18px;
+    }
+
+
+    .batsman-radio-button {
+      margin: 5px;
+    }
+
+    .batsman-selected-value {
+      margin: 15px 0;
+    }
+
+    .over-run{
+        font-size: 18px;
+    }
+
+
+    .scorecard-bottom{
+        width: 100%;
+        .scorecard-entry{
+
+            .scorecard-entry-runs{
+                padding: 0;
+                text-align: center;
+                font-size: 31px;
+                .row{
+                    background: #337ab7;
+                    color: white;
+                    button{
+                        background: #337ab7;
+                        border: solid 2px white;
+                        padding: 21px 0 22px 0;
+                        cursor: pointer;
+                        &:active {
+                            border: 2px solid grey;
+                        }
+
+                    }
+                }
+
+                .scorecard-entry-out{
+                    background: red !important;
+                }
+            }
+
+            .scorecard-entry-extra{
+                font-size: 20px;
+                padding: 0;
+
+                button{
+                    width: 100%;
+                    background: #8BAF20;
+                    color: white;
+                    padding: 18px 0 18px 10px;
+                    border: solid 2px white;
+                    &:active {
+                        border: 2px solid grey;
+                    }
+                }
+            }
+        }
+
+        .scorecard-operation{
+            margin-top: 10px;
+            width: 100%;
+            button{
+                font-size: 20px;
+                padding: 10px 0;
+                width: 33.33%;
+                margin: 0 !important;
+            }
+        }
+    }
+}

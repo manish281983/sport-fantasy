@@ -1,19 +1,13 @@
 @import "~assets/sass/variables";
 @import '~assets/sass/base/tools.responsive';
 
-.scorecard{
-    margin: 20px;
- overflow-y: auto;
+.result-summary{
     height: calc(100vh - 210px);
-
-   .box-container{
-        padding: 10px 0;
-        .scorecard-match-detail{
-            div{
-                padding: 0;
-            }
+        .scorecard-summary-tab{
+            padding: 0;
         }
-        .scorecard-result{
+
+        .result-summary-details{
             margin: 10px 0;
             .row{
                 margin: 0;
@@ -39,31 +33,4 @@
 
             }
         }
-
-    }
-}
-
-
-
-
-@media only screen
-  and (min-device-width: 375px)
-  and (max-device-width: 812px)
-  and (-webkit-min-device-pixel-ratio: 3) {
-
-    .scorecard{
-        margin: 0;
-        .scorecard-headline{
-            .col-xs-1{
-                text-align: center;
-            }
-        }
-        .scorecard-player{
-            padding: 0;
-
-            .col-xs-1{
-                text-align: center;
-            }
-        }
-    }
 }

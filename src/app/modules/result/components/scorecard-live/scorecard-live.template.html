@@ -1,0 +1,74 @@
+<div class="scorecard-live">
+    <div class="row over-summary">
+        <div class="col-sm-6 col-xs-6">
+            SCORE: <strong>19/2 </strong>
+        </div>
+        <div class="col-sm-6 col-xs-6">
+        <div class="pull-right">OVER: <strong>5.2/15</strong></div>
+
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <div class="main-headline-component">
+                <div class="main-headline-component-title">Batsman</div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+        <mat-radio-group class="batsman-radio-group" [(ngModel)]="selectedBatsman">
+            <mat-radio-button class="batsman-radio-button" *ngFor="let batsman of batsmanArr" [value]="batsman.id">
+                {{batsman.name}} (6/13)
+            </mat-radio-button>
+        </mat-radio-group>
+        {{selectedBatsman}}
+    </div>
+        <div class="col-sm-12 col-xs-12">
+            <div class="main-headline-component">
+                <div class="main-headline-component-title">Bowler</div>
+            </div>
+            <div class="bowler-group">
+                Sandeep Singh: <strong>2 Runs</strong>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+        <div class="over-run"> 1 | 0 | WD</div>
+    </div>
+    </div>
+    <div class="scorecard-bottom">
+        <div class="scorecard-entry">
+            <div class="row">
+                <div class="col-sm-10 col-xs-10 scorecard-entry-runs">
+                    <div class="row">
+                        <button class="col-sm-4 col-xs-4">7</button>
+                        <button class="col-sm-4 col-xs-4">6</button>
+                        <button class="col-sm-4 col-xs-4">5</button>
+                    </div>
+                    <div class="row">
+                        <button class="col-sm-4 col-xs-4">4</button>
+                        <button class="col-sm-4 col-xs-4">3</button>
+                        <button class="col-sm-4 col-xs-4">2</button>
+                    </div>
+                    <div class="row">
+                        <button class="col-sm-4 col-xs-4 scorecard-entry-out">OUT</button>
+                        <button class="col-sm-4 col-xs-4">1</button>
+                        <button class="col-sm-4 col-xs-4">0</button>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-2 scorecard-entry-extra">
+                    <button>WD</button>
+                    <button>NB</button>
+                    <button>BYE</button>
+                    <button>LB</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group scorecard-operation" role="group">
+        <button type="button" class="btn btn-secondary">EDIT</button>
+        <button type="button" class="btn btn-secondary">SAVE</button>
+        <button type="button" class="btn btn-secondary">FINISH</button>
+    </div>
+    </div>
+
+
+</div>

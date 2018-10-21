@@ -1,0 +1,89 @@
+<div class="result-summary">
+    <div class="col-sm-12 col-xs-12 scorecard-summary-tab">
+        <div class="result-summary-details">
+            <div class="scorecard-team">
+                Match Info
+            </div>
+            <div class="scorecard-player row">
+                <div class="col-sm-4 col-xs-4">
+                    Match
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.matchNumber}}
+                </div>
+            </div>
+            <div class="scorecard-player row">
+                <div class="col-sm-4 col-xs-4">
+                    Teams
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.match}}
+                </div>
+            </div>
+            <div class="scorecard-player row" *ngIf="scorecardData.summary.result">
+                <div class="col-sm-4 col-xs-4">
+                    Result
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    <strong>{{scorecardData.summary.result}}</strong>
+                </div>
+            </div>
+            <div class="scorecard-player row" *ngIf="scorecardData.summary.result">
+                <div class="col-sm-4 col-xs-4">
+                    MOM
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.mom.name}}
+                </div>
+            </div>
+            <div class="scorecard-player row">
+                <div class="col-sm-4 col-xs-4">
+                    Date
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.date}}
+                </div>
+            </div>
+            <div class="scorecard-player row" *ngIf="scorecardData.summary.result">
+                <div class="col-sm-4 col-xs-4">
+                    Toss
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.toss}}
+                </div>
+            </div>
+            <div class="scorecard-player row">
+                <div class="col-sm-4 col-xs-4">
+                    Venue
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.venue}}
+                </div>
+            </div>
+            <div class="scorecard-player row" *ngIf="scorecardData.summary.umpires">
+                <div class="col-sm-4 col-xs-4">
+                    Umpires
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.umpires}}
+                </div>
+            </div>
+            <div class="scorecard-player row">
+                <div class="col-sm-4 col-xs-4">
+                    {{scorecardData.summary.team1.team}}
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.team1.players}}
+                </div>
+            </div>
+            <div class="scorecard-player row">
+                <div class="col-sm-4 col-xs-4">
+                    {{scorecardData.summary.team2.team}}
+                </div>
+                <div class="col-sm-8 col-xs-8">
+                    {{scorecardData.summary.team2.players}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,8 +5,14 @@ import {ResultRoutingModule} from './result-routing.module';
 import {UIComponentModule} from '../../core/ui-components/ui-components.module';
 import {TeamResult} from './components/team-result/team-result.component';
 import {ResultDetail} from './components/result-detail/result-detail.component';
+import {ResultSummary} from './components/result-summary/result-summary.component';
+import {ScorecardLive} from './components/scorecard-live/scorecard-live.component';
+import {ScorecardOvers} from './components/scorecard-overs/scorecard-overs.component';
 import { MatTabsModule } from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatRadioModule} from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material'
 
 @NgModule({
   imports: [
@@ -14,7 +20,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ResultRoutingModule,
     UIComponentModule,
     MatTabsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule,
+    FormsModule,
+    MatButtonModule
   ],
   exports: [
      TeamResult,
@@ -23,7 +32,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
   declarations: [
     ResultComponent,
     TeamResult,
-    ResultDetail
+    ResultDetail,
+    ResultSummary,
+    ScorecardLive,
+    ScorecardOvers
   ]
 })
 export class ResultModule {

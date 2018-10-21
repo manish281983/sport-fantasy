@@ -1,0 +1,60 @@
+<div class="panes" [@slide]="activePane">
+<div class="scorecard-over " >
+    <div select="[leftPane]" class="col-sm-12 col-xs-12 scorecard-summary-tab">
+        <div class="over-details">
+            <div class="row scorecard-team">
+                <div class="col-sm-7 col-xs-7" >
+                    {{scorecardData.team1.name}} Innings
+                </div>
+                <div class="col-sm-5 col-xs-5">
+                    <div class="pull-right"> {{scorecardData.team1.total}}</div>
+                </div>
+            </div>
+            <div class="over-info row" (click)="togglePane()">
+                <div class="col-sm-2 col-xs-2 over-info-number">
+                    Ov <strong>15</strong>
+                </div>
+                <div class="col-sm-8 col-xs-8 over-info-detail">
+                    <div [ngClass]="getBallClass('1')">1</div>
+                    <div [ngClass]="getBallClass('N')">Nb</div>
+                    <div [ngClass]="getBallClass('0')">0</div>
+                    <div [ngClass]="getBallClass('0')">0</div>
+                    <div [ngClass]="getBallClass('L')">L1</div>
+                    <div [ngClass]="getBallClass('W')">W3</div>
+                    <div  [ngClass]="getBallClass('6')">6</div>
+                    <div [ngClass]="getBallClass('B')">B1</div>
+                    <div [ngClass]="getBallClass('Wd')">Wd2</div>
+                    <div [ngClass]="getBallClass('N')">N4</div>
+                    <div [ngClass]="getBallClass('0')">0</div>
+
+                </div>
+                <div class="col-sm-2 col-xs-2 over-info-total">
+                    <strong>10</strong> <span>Runs</span>
+                </div>
+            </div>
+            <div class="over-info row">
+                <div class="col-sm-2 col-xs-2 over-info-number">
+                    Ov 14
+                </div>
+                <div class="col-sm-8 col-xs-8 over-info-detail">
+                    <div [ngClass]="getBallClass('0')">0</div>
+                    <div [ngClass]="getBallClass('0')">0</div>
+                    <div  [ngClass]="getBallClass('6')">6</div>
+                    <div [ngClass]="getBallClass('2')">2</div>
+                    <div [ngClass]="getBallClass('0')">0</div>
+                    <div [ngClass]="getBallClass('0')">1</div>
+
+                </div>
+                <div class="col-sm-2 col-xs-2 over-info-total">
+                    9 <span>Runs</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+    <div (click)="togglePane()" class="scorecard-live-panel">
+        <scorecard-live select="[rightPane]" [scorecardData]="scorecardData" ></scorecard-live>
+    </div>
+</div>
