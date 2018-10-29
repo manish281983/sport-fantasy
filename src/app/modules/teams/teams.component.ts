@@ -17,7 +17,7 @@ export class TeamsComponent implements OnInit {
      optionList= [];
 
       getPointsTable(){
-           this.apiSrvc.getData(environment.baseURL + '/pools', {})
+           this.apiSrvc.getData(environment.baseURL + '/pool/all', {})
            .subscribe(
              data => {
                  this.optionList= data;
@@ -49,6 +49,28 @@ export class TeamsComponent implements OnInit {
   getTeamDetails(team){
     this.router.navigate(['/team-info/'+team.id], {relativeTo: this.activatedRoute});
   }
+
+  getTeamCaptain(playerList){
+      let player = null;
+      for( let i=0;i< playerList.length;i++){
+        if(playerList[i].role==='Captain'){
+            player= playerList[i];
+            return player.name;
+        }
+      }
+    return null;
+  }
+
+   getTeamViceCaptain(playerList){
+        let player = null;
+        for( let i=0;i< playerList.length;i++){
+          if(playerList[i].role==='Vice Captain'){
+              player= playerList[i];
+              return player.name;
+          }
+        }
+      return null;
+    }
 
 
 

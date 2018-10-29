@@ -8,6 +8,16 @@
 
    .box-container{
         padding: 10px 0;
+        .scorecard-match-start{
+            text-align: center;
+            height: 100%;
+            padding: 50px;
+            color: #3f90dc;
+            i{
+                margin-bottom: 20px;
+                font-size: 75px;
+            }
+        }
         .scorecard-match-detail{
             div{
                 padding: 0;
@@ -18,20 +28,36 @@
             .row{
                 margin: 0;
             }
+            ::ng-deep .mat-expansion-panel-body {
+              margin: 0 !important;
+            }
+
+
+
             .scorecard-team{
                 background: #3f90dc;
                 color: #fff;
                 padding: 8px 10px;
 
+                .mat-expansion-panel-header-title{
+                    color:#fff;
+                    font-size: 14px;
+                }
 
+                .mat-expansion-panel-header-description{
+                  color:#fff;
+                  font-size: 14px;
+                  display: block;
+                  text-align: right;
+                }
             }
             .scorecard-headline{
                 background: #ecebeb;
                 color: #666;
-                padding: 8px 10px;
+                padding: 8px 5px;
             }
             .scorecard-player {
-                padding: 8px 10px;
+                padding: 8px 5px;
                 border-bottom: solid 1px #e1e1e1;
                 &:last-child {
                     border-bottom: none;
@@ -60,7 +86,9 @@
         }
         .scorecard-player{
             padding: 0;
-
+            .hide-ipad-up{
+                padding-left: 15px;
+            }
             .col-xs-1{
                 text-align: center;
             }

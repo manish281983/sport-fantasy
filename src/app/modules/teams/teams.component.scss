@@ -4,6 +4,10 @@
 
 .team-table{
     margin: 10px;
+    overflow-y: auto;
+       height: calc(100vh - #{$header-height-sub-title});
+
+
     .team-table-container{
         margin: 10px 0 20px ;
 
@@ -43,6 +47,8 @@
 
     .team-table{
         margin: 10px 0;
+        overflow-y: auto;
+            height: calc(100vh - #{$header-height-sub-title-mbl});
 
         .team-table-container{
             .team-row{

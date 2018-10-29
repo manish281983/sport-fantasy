@@ -53,7 +53,6 @@
   and (-webkit-min-device-pixel-ratio: 3) {
 
     .result-info-table-container{
-        .result-info-row{
 
             .result-info-teams-detail{
                 margin: 10px 0;
@@ -62,7 +61,42 @@
             .result-info-other{
                text-align: right;
             }
-        }
+
+            .mobile-result-box{
+                width: 100%;
+                overflow: scroll;
+                .mobile-result-box-section {
+                    .section{
+                        padding: 10px;
+                        float:left;
+
+                        .result-info-teams{
+                            font-weight: bold;
+
+                            .result-info-team1{
+                                padding-bottom: 5px;
+                            }
+                        }
+                        .result-info-versus{
+                            text-align: center;
+                            font-weight: normal;
+                        }
+
+                        .result-info-other{
+                            font-size: 11px;
+
+                            .result-info-detail{
+                                font-weight: bold;
+                                font-size: 14px;
+                            }
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+
 
     }
 }

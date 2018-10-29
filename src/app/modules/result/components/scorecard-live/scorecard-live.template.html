@@ -1,4 +1,4 @@
-<div class="scorecard-live">
+<div class="scorecard-live" (click)="cancelAction()">
     <div class="row over-summary">
         <div class="col-sm-6 col-xs-6">
             SCORE: <strong>19/2 </strong>
@@ -66,7 +66,7 @@
         <div class="btn-group scorecard-operation" role="group">
         <button type="button" class="btn btn-secondary">EDIT</button>
         <button type="button" class="btn btn-secondary">SAVE</button>
-        <button type="button" class="btn btn-secondary">FINISH</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelAction()">FINISH</button>
     </div>
     </div>
 

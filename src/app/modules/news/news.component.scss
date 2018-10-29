@@ -3,6 +3,9 @@
 
 
 .news-table{
+    overflow-y: auto;
+    height: calc(100vh - #{$header-height-sub-title1} );
+
     margin: 10px;
     .news-container{
         margin: 10px 0 20px;

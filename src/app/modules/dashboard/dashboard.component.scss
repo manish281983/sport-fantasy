@@ -1,7 +1,11 @@
+@import "~assets/sass/variables";
+@import '~assets/sass/base/tools.responsive';
+
 .dashboard-container{
-    margin: 15px;
-    overflow-y: auto;
-    height: calc(100vh - 35px);
+    margin: 15px 15px 0;
+    overflow: scroll;
+      height: calc(100vh - #{$header-height});
+
 }
 
 .left-panel{
@@ -15,3 +19,16 @@
 .right-panel{
     padding: 10px;
 }
+
+
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+  .dashboard-container{
+    height: calc(100vh - #{$header-height-mbl});
+
+  }
+  }

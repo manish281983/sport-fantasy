@@ -63,7 +63,11 @@
             }
         }
     }
+    .team-info-detail{
+        overflow-y: auto;
+            height: calc(100vh - 280px );
 
+    }
 }
 
 

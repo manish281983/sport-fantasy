@@ -1,5 +1,5 @@
 
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {environment} from 'app/environment';
 import {APISrvc} from '../../../../core/services/api.service';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
@@ -13,6 +13,7 @@ import {StorageSrvc} from 'app/core/services/storage.service';
 export class ScorecardLive  {
 
  @Input() scorecardData: any;
+ @Output() backAction = new EventEmitter<any>();
 
    selectedBatsman: string;
   batsmanArr:any;
@@ -43,6 +44,9 @@ export class ScorecardLive  {
 
     }
 
+cancelAction(){
+     this.backAction.emit();
+    }
 
 
 }

@@ -15,7 +15,7 @@ export class VenuesComponent implements OnInit {
 
 
   getVenuesDetail(){
-      this.apiSrvc.getData(environment.serverURL + '/venue/all', {})
+      this.apiSrvc.getData(environment.baseURL + '/venues', {})
       .subscribe(
         data => {
           this.venues= data;

@@ -2,6 +2,9 @@
 @import '~assets/sass/base/tools.responsive';
 
 .stats{
+    overflow-y: auto;
+    height: calc(100vh - #{$header-height-sub-title1});
+
     margin: 20px;
     .box-container{
         overflow: hidden;

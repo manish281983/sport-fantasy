@@ -28,8 +28,6 @@ section.app-container {
 
 .content-container{
     width: 100%;
-    height: calc(100% - #{$header-height});
-    overflow-y: scroll;
 }
 
 /* Testing this */

@@ -4,6 +4,9 @@
 
 
 .player-profile-table{
+overflow-y: auto;
+    height: calc(100vh - 180px );
+
     margin: 10px;
     .player-profile-container{
         margin: 10px;

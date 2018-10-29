@@ -3,7 +3,7 @@
 
 .match-schedule{
     overflow-y: auto;
-    height: calc(100vh - #{$header-height});
+    height: calc(100vh - #{$header-height-sub-title});
     .match-schedule-container{
         border-top: 1px solid $firefly !important;
         border: 1px solid $catskill-white;
@@ -77,7 +77,7 @@
 .fixture-info-table{
     margin: 10px;
         overflow-y: auto;
-        height: calc(100vh - 65px);
+       height: calc(100vh - #{$header-height-sub-title-mbl});
 
 .fixture-info-table-container{
     margin: 10px 0 20px;

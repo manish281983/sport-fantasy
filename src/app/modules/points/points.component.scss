@@ -3,6 +3,9 @@
 
 
 .points-table{
+    overflow-y: auto;
+    height: calc(100vh - #{$header-height-sub-title} );
+
     margin: 10px;
     .points-table-container{
         margin: 10px 0 20px ;

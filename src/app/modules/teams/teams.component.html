@@ -7,19 +7,25 @@
                     <span class="custom-tab-label">{{option.name}}</span>
                 </ng-template>
                 <div class="row team-headline">
-                    <div class="col-sm-6 col-xs-6">
+                    <div class="col-sm-4 col-xs-4">
                         TEAMS
                     </div>
-                    <div class="col-sm-6 col-xs-6">
+                    <div class="col-sm-4 col-xs-4">
                         CAPTAIN
                     </div>
+                    <div class="col-sm-4 col-xs-4">
+                        VICE CAPTAIN
+                    </div>
                 </div>
-                <div class="row team-row" *ngFor="let team of option.teamlist" (click)="getTeamDetails(team)">
-                    <div class="col-sm-6 col-xs-6">
+                <div class="row team-row" *ngFor="let team of option.team" (click)="getTeamDetails(team)">
+                    <div class="col-sm-4 col-xs-4">
                         {{team.name}}
                     </div>
-                    <div class="col-sm-6 col-xs-6" *ngIf="team.captain">
-                        {{team.captain.name}}
+                    <div class="col-sm-4 col-xs-4" *ngIf="team.player">
+                        {{getTeamCaptain(team.player)}}
+                    </div>
+                    <div class="col-sm-4 col-xs-4" *ngIf="team.player">
+                        {{getTeamViceCaptain(team.player)}}
                     </div>
 
                 </div>

@@ -1,5 +1,5 @@
 
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, EventEmitter} from '@angular/core';
 import {environment} from 'app/environment';
 import {APISrvc} from '../../../../core/services/api.service';
 import {Router, NavigationEnd, ActivatedRoute} from '@angular/router';
@@ -19,6 +19,7 @@ export class ResultSummary  {
 
     ngOnInit() {
     }
+
 
 
 

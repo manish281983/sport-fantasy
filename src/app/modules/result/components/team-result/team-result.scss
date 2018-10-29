@@ -3,6 +3,9 @@
 
 
 .match-result{
+    overflow-y: auto;
+    height: calc(100vh - #{$header-height-sub-title});
+
     .match-result-container{
         border-top: 1px solid $firefly !important;
         border: 1px solid $catskill-white;
@@ -81,6 +84,7 @@
         height: calc(100vh - 65px);
     .result-info-table-container{
         margin: 10px 0 20px;
+        padding-top: 0 !important;
         .team-icon{
             width: 25px;
             height: 25px;

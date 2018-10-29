@@ -1,275 +1,288 @@
 <app-sub-header [title]="'RESULT'"></app-sub-header>
 <div class="scorecard">
     <div class="box-container">
-        <mat-tab-group>
-            <mat-tab>
+        <mat-tab-group [(selectedIndex)]="selectedTabIndex">
+            <!--<mat-tab>
                 <ng-template mat-tab-label>
                     <span class="custom-tab-label">Overs</span>
                 </ng-template>
                 <scorecard-overs [scorecardData]="scorecardData"></scorecard-overs>
-            </mat-tab>
+            </mat-tab> -->
+
             <mat-tab>
+
                 <ng-template mat-tab-label>
                     <span class="custom-tab-label">Summary</span>
                 </ng-template>
-                <result-summary [scorecardData]="scorecardData"></result-summary>
+                <div>
+                 <result-summary [scorecardData]="scorecardData"></result-summary>
+                </div>
+
             </mat-tab>
             <mat-tab>
                <ng-template mat-tab-label>
                     <span class="custom-tab-label">Scorecard</span>
                 </ng-template>
-                <div class="scorecard-match-detail">
-                    <div class="col-sm-12">
-                        <div class="scorecard-result">
-                            <div class="row scorecard-team">
-                                <div class="col-sm-7 col-xs-7">
-                                    {{scorecardData.team1.name}} Innings
-                                </div>
-                                <div class="col-sm-5 col-xs-5">
-                                    <div class="pull-right"> {{scorecardData.team1.total}}</div>
-                                </div>
-                            </div>
-                            <div class="scorecard-headline row">
-                                <div class="col-sm-4 col-xs-8">
-                                    Batsman
-                                </div>
-                                <div class="col-sm-4 hide-mobile">
-                                    &nbsp;
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    R
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    B
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    4s
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    6s
-                                </div>
-                            </div>
-                            <div class="scorecard-player" *ngFor="let player of scorecardData.team1.batting">
-                                <div class="row">
-                                    <div class="col-sm-4  col-xs-8">
-                                        <a href="#">{{player.name}}</a>
-                                    </div>
-                                    <div class="col-sm-4 hide-mobile">
-                                        {{player.status}}
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        <strong>{{player.runs}}</strong>
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        {{player.balls}}
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        {{player.four}}
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        {{player.six}}
-                                    </div>
-                                </div>
-                                <div class="hide-ipad-up">
-                                    {{player.status}}
-                                </div>
-                            </div>
-                            <div class="scorecard-player row" >
-                                <div class="col-sm-8 col-xs-8">
-                                    Extras:
-                                </div>
-                                <div class="col-sm-4 col-xs-4">
-                                    <strong>{{scorecardData.team1.extra}}</strong>
-                                </div>
-                            </div>
-                            <div class="scorecard-player row" >
-                                <div class="col-sm-8 col-xs-8">
-                                    TOTALS:
-                                </div>
-                                <div class="col-sm-4 col-xs-4">
-                                    <strong>{{scorecardData.team1.total}}</strong>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="scorecard-headline row">
-                                <div class="col-sm-6 col-xs-6">
-                                    Bowler
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    O
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    R
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    W
-                                </div>
-                                <div class="col-sm-1 col-xs-1 hide-mobile">
-                                    ECO
-                                </div>
-                                <div class="col-sm-1 col-xs-1 hide-ipad-up">
-                                    EC
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    WD
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    NB
-                                </div>
-                            </div>
-                            <div class="scorecard-player row" *ngFor="let player of scorecardData.team1.bowling">
-                                <div class="col-sm-6 col-xs-6">
-                                    <a href="#">{{player.name}}</a>
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.over}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    <strong>{{player.runs}}</strong>
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.wicket}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{getEconomy(player)}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.wide}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.noball}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-12">
-                        <div class="scorecard-result">
-                            <div class="row scorecard-team">
-                                <div class="col-sm-7 col-xs-7">
-                                    {{scorecardData.team2.name}} Innings
-                                </div>
-                                <div class="col-sm-5 col-xs-5">
-                                    <div class="pull-right"> {{scorecardData.team2.total}}</div>
-                                </div>
-                            </div>
-                            <div class="scorecard-headline row">
-                                <div class="col-sm-4 col-xs-8">
-                                    Batsman
-                                </div>
-                                <div class="col-sm-4 hide-mobile">
-                                    &nbsp;
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    R
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    B
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    4s
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    6s
-                                </div>
-                            </div>
-                            <div class="scorecard-player" *ngFor="let player of scorecardData.team2.batting">
-                                <div class="row">
-                                    <div class="col-sm-4  col-xs-8">
-                                        <a href="#">{{player.name}}</a>
-                                    </div>
-                                    <div class="col-sm-4 hide-mobile">
-                                        {{player.status}}
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        <strong>{{player.runs}}</strong>
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        {{player.balls}}
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        {{player.four}}
-                                    </div>
-                                    <div class="col-sm-1 col-xs-1">
-                                        {{player.six}}
-                                    </div>
-                                </div>
-                                <div class="hide-ipad-up">
-                                    {{player.status}}
-                                </div>
-                            </div>
-                            <div class="scorecard-player row" >
-                                <div class="col-sm-8 col-xs-8">
-                                    Extras:
-                                </div>
-                                <div class="col-sm-4 col-xs-4">
-                                    <strong>{{scorecardData.team2.extra}}</strong>
-                                </div>
-                            </div>
-                            <div class="scorecard-player row" >
-                                <div class="col-sm-8 col-xs-8">
-                                    TOTALS:
-                                </div>
-                                <div class="col-sm-4 col-xs-4">
-                                    <strong>{{scorecardData.team2.total}}</strong>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="scorecard-headline row">
-                                <div class="col-sm-6 col-xs-6">
-                                    Bowler
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    O
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    R
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    W
-                                </div>
-                                <div class="col-sm-1 col-xs-1 hide-mobile">
-                                    ECO
-                                </div>
-                                <div class="col-sm-1 col-xs-1 hide-ipad-up">
-                                    EC
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    WD
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    NB
-                                </div>
-                            </div>
-                            <div class="scorecard-player row" *ngFor="let player of scorecardData.team2.bowling">
-                                <div class="col-sm-6 col-xs-6">
-                                    <a href="#">{{player.name}}</a>
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.over}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    <strong>{{player.runs}}</strong>
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.wicket}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{getEconomy(player)}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.wide}}
-                                </div>
-                                <div class="col-sm-1 col-xs-1">
-                                    {{player.noball}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="scorecard-match-start" [hidden]="true">
+                    <i class="fa fa-balance-scale fa-5x" aria-hidden="true"></i><br/>
+                    Match has not started yet.
                 </div>
+                <div *ngIf="selectedTabIndex == 1" class="scorecard-result">
+                    <mat-accordion multi="true">
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header class="scorecard-team">
+                                <mat-panel-title>
+                                    {{scorecardData.team1.name}} Innings
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    {{scorecardData.team1.total}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                           <div>
+                               <div class="scorecard-headline row">
+                                   <div class="col-sm-4 col-xs-8">
+                                       Batsman
+                                   </div>
+                                   <div class="col-sm-4 hide-mobile">
+                                       &nbsp;
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       R
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       B
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       4s
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       6s
+                                   </div>
+                               </div>
+                               <div class="scorecard-player" *ngFor="let player of scorecardData.team1.batting">
+                                   <div class="row">
+                                       <div class="col-sm-4  col-xs-8">
+                                           <a href="#">{{player.name}}</a>
+                                       </div>
+                                       <div class="col-sm-4 hide-mobile">
+                                           {{player.status}}
+                                       </div>
+                                       <div class="col-sm-1 col-xs-1">
+                                           <strong>{{player.runs}}</strong>
+                                       </div>
+                                       <div class="col-sm-1 col-xs-1">
+                                           {{player.balls}}
+                                       </div>
+                                       <div class="col-sm-1 col-xs-1">
+                                           {{player.four}}
+                                       </div>
+                                       <div class="col-sm-1 col-xs-1">
+                                           {{player.six}}
+                                       </div>
+                                   </div>
+                                   <div class="hide-ipad-up">
+                                       {{player.status}}
+                                   </div>
+                               </div>
+                               <div class="scorecard-player row" >
+                                   <div class="col-sm-8 col-xs-8">
+                                       Extras:
+                                   </div>
+                                   <div class="col-sm-4 col-xs-4">
+                                       <strong>{{scorecardData.team1.extra}}</strong>
+                                   </div>
+                               </div>
+                               <div class="scorecard-player row" >
+                                   <div class="col-sm-8 col-xs-8">
+                                       TOTALS:
+                                   </div>
+                                   <div class="col-sm-4 col-xs-4">
+                                       <strong>{{scorecardData.team1.total}}</strong>
+                                   </div>
+                               </div>
+                               <br/>
+                               <div class="scorecard-headline row">
+                                   <div class="col-sm-6 col-xs-6">
+                                       Bowler
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       O
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       R
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       W
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1 hide-mobile">
+                                       ECO
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1 hide-ipad-up">
+                                       EC
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       WD
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       NB
+                                   </div>
+                               </div>
+                               <div class="scorecard-player row" *ngFor="let player of scorecardData.team1.bowling">
+                                   <div class="col-sm-6 col-xs-6">
+                                       <a href="#">{{player.name}}</a>
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       {{player.over}}
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       <strong>{{player.runs}}</strong>
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       {{player.wicket}}
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       {{getEconomy(player)}}
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       {{player.wide}}
+                                   </div>
+                                   <div class="col-sm-1 col-xs-1">
+                                       {{player.noball}}
+                                   </div>
+                               </div>
+
+                           </div>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel [expanded]="true">
+                            <mat-expansion-panel-header class="scorecard-team">
+                                <mat-panel-title>
+                                    {{scorecardData.team2.name}} Innings
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    {{scorecardData.team2.total}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div>
+                                <div class="scorecard-headline row">
+                                    <div class="col-sm-4 col-xs-8">
+                                        Batsman
+                                    </div>
+                                    <div class="col-sm-4 hide-mobile">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        R
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        B
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        4s
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        6s
+                                    </div>
+                                </div>
+                                <div class="scorecard-player" *ngFor="let player of scorecardData.team2.batting">
+                                    <div class="row">
+                                        <div class="col-sm-4  col-xs-8">
+                                            <a href="#">{{player.name}}</a>
+                                        </div>
+                                        <div class="col-sm-4 hide-mobile">
+                                            {{player.status}}
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            <strong>{{player.runs}}</strong>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            {{player.balls}}
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            {{player.four}}
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            {{player.six}}
+                                        </div>
+                                    </div>
+                                    <div class="hide-ipad-up">
+                                        {{player.status}}
+                                    </div>
+                                </div>
+                                <div class="scorecard-player row" >
+                                    <div class="col-sm-8 col-xs-8">
+                                        Extras:
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                        <strong>{{scorecardData.team2.extra}}</strong>
+                                    </div>
+                                </div>
+                                <div class="scorecard-player row" >
+                                    <div class="col-sm-8 col-xs-8">
+                                        TOTALS:
+                                    </div>
+                                    <div class="col-sm-4 col-xs-4">
+                                        <strong>{{scorecardData.team2.total}}</strong>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="scorecard-headline row">
+                                    <div class="col-sm-6 col-xs-6">
+                                        Bowler
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        O
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        R
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        W
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1 hide-mobile">
+                                        ECO
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1 hide-ipad-up">
+                                        EC
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        WD
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        NB
+                                    </div>
+                                </div>
+                                <div class="scorecard-player row" *ngFor="let player of scorecardData.team2.bowling">
+                                    <div class="col-sm-6 col-xs-6">
+                                        <a href="#">{{player.name}}</a>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        {{player.over}}
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        <strong>{{player.runs}}</strong>
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        {{player.wicket}}
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        {{getEconomy(player)}}
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        {{player.wide}}
+                                    </div>
+                                    <div class="col-sm-1 col-xs-1">
+                                        {{player.noball}}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+
             </mat-tab>
+
+
         </mat-tab-group>
     </div>
 </div>

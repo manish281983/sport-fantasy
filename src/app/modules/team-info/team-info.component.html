@@ -42,7 +42,9 @@
             </div>
         </div>
     </div>
-        <team-squad [players]="teamInfo.players" [isTeamList]="true" [hidden]="selectedOption!=='Squads'"></team-squad>
-        <team-schedule [teamName]="teamInfo.name" [hidden]="selectedOption!=='Schedule'"></team-schedule>
-        <team-result [teamName]="teamInfo.name" [hidden]="selectedOption!=='Results'"></team-result>
+        <div class="team-info-detail">
+            <team-squad  [players]="teamInfo.players" [isTeamList]="true" [hidden]="selectedOption!=='Squads'"></team-squad>
+            <team-schedule class="team-info-detail" [teamName]="teamInfo.name" [hidden]="selectedOption!=='Schedule'"></team-schedule>
+            <team-result class="team-info-detail" [teamName]="teamInfo.name" [hidden]="selectedOption!=='Results'"></team-result>
+        </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="panes" [@slide]="activePane">
-<div class="scorecard-over " >
+<div class="scorecard-over" >
     <div select="[leftPane]" class="col-sm-12 col-xs-12 scorecard-summary-tab">
         <div class="over-details">
             <div class="row scorecard-team">
@@ -54,7 +54,7 @@
     </div>
 
 </div>
-    <div (click)="togglePane()" class="scorecard-live-panel">
-        <scorecard-live select="[rightPane]" [scorecardData]="scorecardData" ></scorecard-live>
+    <div  class="scorecard-live-panel">
+        <scorecard-live select="[rightPane]" (backAction)="togglePane()" [scorecardData]="scorecardData" ></scorecard-live>
     </div>
 </div>
